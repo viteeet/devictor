@@ -5,10 +5,10 @@ import {Code2, Users, Award, Zap} from 'lucide-react';
 import {motion, useInView} from 'framer-motion';
 
 const stats = [
-  {icon: Code2, end: 50, suffix: '+', label: 'Projetos'},
-  {icon: Users, end: 100, suffix: '+', label: 'Clientes'},
-  {icon: Award, end: 15, suffix: '+', label: 'Anos de Experiência'},
-  {icon: Zap, end: 200, suffix: '+', label: 'Soluções Entregues'},
+  {icon: Code2, end: 25, suffix: '+', label: 'Projetos'},
+  {icon: Users, end: 15, suffix: '+', label: 'Clientes'},
+  {icon: Award, end: 5, suffix: '+', label: 'Anos de Experiência'},
+  {icon: Zap, end: 100, suffix: '+', label: 'Soluções Entregues'},
 ];
 
 export function Stats() {

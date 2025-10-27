@@ -5,19 +5,19 @@ import {Quote} from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Ana Paula Mendes',
-    company: 'CEO, Innovate Solutions',
-    text: 'Victor desenvolveu nossa plataforma de gestão e superou todas as expectativas. Código limpo, entrega no prazo e suporte excelente durante todo o processo.',
+    name: 'Equipe de TI',
+    company: 'REVERSA',
+    text: 'Victor desenvolveu soluções personalizadas que otimizaram nossos processos internos. Profissional dedicado, código de qualidade e entregas sempre no prazo. Recomendamos!',
   },
   {
-    name: 'Ricardo Torres',
-    company: 'Diretor de Tecnologia, FinanceFlow',
-    text: 'Contratei o Victor para criar um sistema de automação em Python. Ele não só entregou a solução completa, mas também documentou tudo perfeitamente. Profissional excepcional.',
+    name: 'Diretoria',
+    company: 'CARTULAR',
+    text: 'Contratamos o Victor para desenvolver automações em Python que reduziram significativamente o tempo de operação. Profissional excepcional com excelente comunicação.',
   },
   {
-    name: 'Juliana Costa',
-    company: 'Fundadora, GreenTech Startup',
-    text: 'Desde a concepção até o deploy, Victor foi fundamental. A landing page que ele criou aumentou nossa taxa de conversão em 300%. Recomendo de olhos fechados!',
+    name: 'Gerência de Projetos',
+    company: 'GRUPO BIMBO',
+    text: 'Victor criou dashboards e sistemas de gestão que transformaram nossa análise de dados. Metodologia clara e suporte contínuo. Profissional de confiança.',
   },
 ];
 

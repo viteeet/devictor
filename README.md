@@ -7,7 +7,7 @@ Landing page moderna e profissional para o desenvolvedor Victor Hugo, desenvolvi
 - ✅ Next.js 14 com App Router
 - ✅ TypeScript
 - ✅ Tailwind CSS
-- ✅ Internacionalização (PT/EN) com next-intl
+- ✅ Design moderno e responsivo
 - ✅ Animações sutis com Framer Motion
 - ✅ Carrossel com Swiper
 - ✅ SEO otimizado (metadata, OG, JSON-LD)
@@ -35,8 +35,8 @@ npm start
 
 ```
 ├── app/
-│   ├── [locale]/          # Roteamento com i18n
 │   ├── layout.tsx         # Layout principal com SEO
+│   ├── page.tsx           # Página inicial
 │   └── globals.css        # Estilos globais
 ├── components/            # Componentes React
 │   ├── Navbar.tsx
@@ -48,36 +48,36 @@ npm start
 │   ├── Contact.tsx
 │   ├── Footer.tsx
 │   └── WhatsAppButton.tsx
-├── messages/              # Arquivos de tradução
-│   ├── pt.json
-│   └── en.json
 ├── public/                # Arquivos estáticos
 │   ├── portfolio/         # Imagens do portfólio
 │   ├── favicon.ico
-│   └── og-image.jpg
-└── i18n.ts               # Configuração do next-intl
+│   └── cv.pdf
 ```
 
 ## Configuração
 
-### Formulário de Contato
+### WhatsApp
 
-Edite `components/Contact.tsx` e substitua `YOUR_FORM_ID` pelo seu ID do Formspree.
-
-### Imagens do Portfólio
-
-Adicione as imagens do portfólio na pasta `/public/portfolio/`. O componente Portfolio lerá automaticamente todas as imagens.
+O número do WhatsApp já está configurado: `5521983573881`. Para alterar, edite:
+- `components/Hero.tsx`
+- `components/Contact.tsx`
+- `components/WhatsAppButton.tsx`
 
 ### Links Sociais
 
 Edite os links de GitHub e LinkedIn em `components/Footer.tsx`.
 
-### WhatsApp
+### SEO
 
-O número do WhatsApp já está configurado. Para alterar, edite:
-- `components/Hero.tsx`
-- `components/Contact.tsx`
-- `components/WhatsAppButton.tsx`
+Configure as informações de SEO em `app/layout.tsx`:
+- Título do site
+- Descrição
+- URL base
+- Links sociais
+
+### Imagens do Portfólio (Opcional)
+
+Adicione as imagens do portfólio na pasta `/public/portfolio/` se desejar mostrar projetos.
 
 ## Deploy
 
