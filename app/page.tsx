@@ -10,10 +10,12 @@ import {Navbar} from '@/components/Navbar';
 import {Footer} from '@/components/Footer';
 import {WhatsAppButton} from '@/components/WhatsAppButton';
 import {CursorTrail} from '@/components/CursorTrail';
+import {LoadingScreen} from '@/components/LoadingScreen';
 
 export default function HomePage() {
   return (
     <>
+      <LoadingScreen />
       <CursorTrail />
       <Navbar />
       <main>

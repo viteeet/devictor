@@ -3,8 +3,11 @@
 import {motion} from 'framer-motion';
 
 export function ParticlesBackground() {
-  // Gerar partículas luminosas e mais visíveis
-  const particles = Array.from({length: 40}, (_, i) => ({
+  // Reduzir partículas em mobile para performance
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const particleCount = isMobile ? 15 : 40;
+  
+  const particles = Array.from({length: particleCount}, (_, i) => ({
     id: i,
     left: `${Math.random() * 100}%`,
     top: `${Math.random() * 100}%`,

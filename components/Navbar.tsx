@@ -72,18 +72,22 @@ export function Navbar() {
             initial={{opacity: 0, height: 0}}
             animate={{opacity: 1, height: 'auto'}}
             exit={{opacity: 0, height: 0}}
-            className="md:hidden bg-darker/95 backdrop-blur-lg border-t border-primary/20"
+            transition={{duration: 0.3}}
+            className="md:hidden bg-darker/95 backdrop-blur-lg border-t border-primary/20 overflow-hidden"
           >
-            <div className="px-4 py-4 space-y-2">
-              {navItems.map((item) => (
-                <a
+            <div className="px-4 py-4 space-y-3">
+              {navItems.map((item, index) => (
+                <motion.a
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="block py-2 text-gray-300 hover:text-secondary transition-colors"
+                  initial={{x: -20, opacity: 0}}
+                  animate={{x: 0, opacity: 1}}
+                  transition={{delay: index * 0.1}}
+                  className="block py-3 text-gray-300 hover:text-secondary transition-colors border-b border-primary/10 hover:border-secondary/50"
                 >
                   {item.label}
-                </a>
+                </motion.a>
               ))}
             </div>
           </motion.div>

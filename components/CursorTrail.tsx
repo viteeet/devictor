@@ -10,6 +10,9 @@ export function CursorTrail() {
   let trailId = 0;
 
   useEffect(() => {
+    // Desabilitar cursor trail em mobile
+    if (window.innerWidth < 768) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({x: e.clientX, y: e.clientY});
       
@@ -38,7 +41,7 @@ export function CursorTrail() {
   }, []);
 
   return (
-    <>
+    <div className="hidden md:block">
       {/* Trail suave */}
       {trails.map((trail, index) => (
         <motion.div
@@ -75,7 +78,7 @@ export function CursorTrail() {
           transition={{duration: 1, ease: 'easeOut'}}
         />
       ))}
-    </>
+    </div>
   );
 }
 

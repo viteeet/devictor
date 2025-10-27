@@ -79,7 +79,7 @@ export function Hero() {
             className="mb-8"
           >
             <motion.h1 
-              className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight px-4"
               animate={{
                 textShadow: [
                   '0 0 0 rgba(59, 130, 246, 0), 5px 0 0 rgba(56, 189, 248, 0), -5px 0 0 rgba(99, 102, 241, 0)',
@@ -118,7 +118,7 @@ export function Hero() {
                 ease: 'easeInOut',
               }}
             >
-              <p className="text-3xl md:text-5xl lg:text-6xl font-display font-bold">
+              <p className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold px-4">
                 <span className="bg-gradient-to-r from-secondary via-accent to-secondary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-text text-shimmer">
                   Desenvolvedor Full Stack
                 </span>
@@ -130,7 +130,7 @@ export function Hero() {
             initial={{opacity: 0, y: 20}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.8, delay: 0.2}}
-            className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto px-4"
           >
             Criação de sites, automações Python e desenvolvimento web sob medida
           </motion.p>
