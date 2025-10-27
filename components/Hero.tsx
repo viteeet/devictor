@@ -1,11 +1,53 @@
 'use client';
 
+import React, {useState} from 'react';
 import {MessageCircle, ChevronRight} from 'lucide-react';
 import {motion} from 'framer-motion';
 import Link from 'next/link';
 import {ParticlesBackground} from './ParticlesBackground';
 
+// Função para animar o texto com efeito de digitação/programação
+function ShuffleText({text}: {text: string}) {
+  const letters = text.split('');
+  
+  return (
+    <motion.span
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      className="inline-block"
+    >
+      {letters.map((letter, index) => (
+        <motion.span
+          key={`${letter}-${index}`}
+          initial={{
+            opacity: 0,
+            filter: 'blur(10px)',
+          }}
+          animate={{
+            opacity: 1,
+            filter: 'blur(0px)',
+          }}
+          transition={{
+            duration: 0.3,
+            delay: index * 0.05,
+            ease: 'easeOut',
+          }}
+          className="inline-block"
+        >
+          {letter === ' ' ? '\u00A0' : letter}
+        </motion.span>
+      ))}
+    </motion.span>
+  );
+}
+
 export function Hero() {
+  const [isGlitching, setIsGlitching] = useState(false);
+
+  const handleWhatsAppHover = () => {
+    setIsGlitching(true);
+    setTimeout(() => setIsGlitching(false), 300);
+  };
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -30,20 +72,59 @@ export function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center">
-          <motion.h1
+          <motion.div
             initial={{opacity: 0, y: 20}}
             animate={{opacity: 1, y: 0}}
             transition={{duration: 0.8}}
-            className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-8 leading-tight"
+            className="mb-8"
           >
-            <span className="text-white">
-              O desenvolvedor{' '}
-              <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
-                Full Stack
+            <motion.h1 
+              className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight"
+              animate={{
+                textShadow: [
+                  '0 0 0 rgba(59, 130, 246, 0), 5px 0 0 rgba(56, 189, 248, 0), -5px 0 0 rgba(99, 102, 241, 0)',
+                  '0 0 0 rgba(59, 130, 246, 1), 5px 0 0 rgba(56, 189, 248, 1), -5px 0 0 rgba(99, 102, 241, 1), 3px 0 0 rgba(236, 72, 153, 0.8), -3px 0 0 rgba(14, 165, 233, 0.8)',
+                  '0 0 0 rgba(59, 130, 246, 0), 5px 0 0 rgba(56, 189, 248, 0), -5px 0 0 rgba(99, 102, 241, 0)',
+                ],
+                x: [0, 3, -3, 2, -2, 0],
+                y: [0, 1, -1, 0],
+              }}
+              transition={{
+                duration: 0.15,
+                repeat: Infinity,
+                repeatDelay: 1.5,
+                ease: 'easeInOut',
+              }}
+            >
+              <span className="text-white">
+                <ShuffleText text="Victor Hugo" />
               </span>
-              {' '}que você precisa na sua empresa!
-            </span>
-          </motion.h1>
+            </motion.h1>
+            <motion.div 
+              className="relative inline-block mt-2"
+              animate={{
+                textShadow: [
+                  '0 0 0 rgba(59, 130, 246, 0), 4px 0 0 rgba(56, 189, 248, 0), -4px 0 0 rgba(99, 102, 241, 0)',
+                  '0 0 0 rgba(59, 130, 246, 1), 4px 0 0 rgba(56, 189, 248, 1), -4px 0 0 rgba(99, 102, 241, 1), 2px 0 0 rgba(236, 72, 153, 0.9), -2px 0 0 rgba(14, 165, 233, 0.9)',
+                  '0 0 0 rgba(59, 130, 246, 0), 4px 0 0 rgba(56, 189, 248, 0), -4px 0 0 rgba(99, 102, 241, 0)',
+                ],
+                x: [0, 2, -2, 1, -1, 0],
+                y: [0, 1, -1, 0],
+              }}
+              transition={{
+                duration: 0.12,
+                repeat: Infinity,
+                repeatDelay: 2.5,
+                ease: 'easeInOut',
+              }}
+            >
+              <p className="text-3xl md:text-5xl lg:text-6xl font-display font-bold">
+                <span className="bg-gradient-to-r from-secondary via-accent to-secondary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-text text-shimmer">
+                  Desenvolvedor Full Stack
+                </span>
+              </p>
+            </motion.div>
+          </motion.div>
 
           <motion.p
             initial={{opacity: 0, y: 20}}
@@ -60,15 +141,25 @@ export function Hero() {
             transition={{duration: 0.8, delay: 0.4}}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <a
+            <motion.a
               href="https://wa.me/5521983573881"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-2 px-8 py-4 bg-primary hover:bg-secondary rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/50"
+              className="group flex items-center gap-2 px-8 py-4 bg-primary hover:bg-secondary rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/50 cursor-pointer"
+              onMouseEnter={handleWhatsAppHover}
+              animate={isGlitching ? {
+                x: [0, 3, -3, 4, -4, 2, -2, 0],
+                y: [0, 3, -3, 4, -4, 2, -2, 0],
+                rotate: [0, 8, -8, 5, -5, 0],
+              } : {}}
+              transition={{
+                duration: 0.15,
+                times: [0, 0.14, 0.28, 0.42, 0.56, 0.7, 0.84, 1],
+              }}
             >
               <MessageCircle className="w-5 h-5" />
-              Falar no WhatsApp
-            </a>
+              <span>Falar no WhatsApp</span>
+            </motion.a>
 
             <a
               href="#portfolio"

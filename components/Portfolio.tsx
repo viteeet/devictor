@@ -37,7 +37,7 @@ export function Portfolio() {
           transition={{duration: 0.8}}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 bg-gradient-to-r from-secondary via-accent to-secondary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-text">
             Portfólio
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">Alguns dos projetos que desenvolvi</p>
@@ -73,11 +73,17 @@ export function Portfolio() {
           >
             {images.map((image, index) => (
               <SwiperSlide key={index}>
-                <div className="relative aspect-video overflow-hidden rounded-lg bg-gradient-to-br from-primary/20 to-secondary/10 cursor-pointer group" onClick={() => setSelectedImage(image)}>
+                <motion.div 
+                  className="relative aspect-video overflow-hidden rounded-lg bg-gradient-to-br from-primary/20 to-secondary/10 cursor-pointer group" 
+                  onClick={() => setSelectedImage(image)}
+                  whileHover={{scale: 1.05, rotateY: 5, z: 50}}
+                  style={{perspective: 1000, transformStyle: 'preserve-3d'}}
+                  transition={{duration: 0.3}}
+                >
                   <div className="absolute inset-0 flex items-center justify-center bg-darker/60 group-hover:bg-darker/40 transition-colors">
                     <span className="text-white font-semibold">Projeto {index + 1}</span>
                   </div>
-                </div>
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>

@@ -9,10 +9,12 @@ import {Contact} from '@/components/Contact';
 import {Navbar} from '@/components/Navbar';
 import {Footer} from '@/components/Footer';
 import {WhatsAppButton} from '@/components/WhatsAppButton';
+import {CursorTrail} from '@/components/CursorTrail';
 
 export default function HomePage() {
   return (
     <>
+      <CursorTrail />
       <Navbar />
       <main>
         <Hero />

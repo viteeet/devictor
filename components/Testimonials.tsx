@@ -33,7 +33,7 @@ export function Testimonials() {
           transition={{duration: 0.8}}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 bg-gradient-to-r from-secondary via-accent to-secondary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-text">
             Depoimentos
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">O que os clientes dizem sobre o meu trabalho</p>

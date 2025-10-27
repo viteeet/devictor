@@ -69,7 +69,7 @@ export function Stats() {
                       <Icon className="w-8 h-8 text-secondary" />
                     </div>
                   </div>
-                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent mb-2">
+                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-secondary via-accent to-secondary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-text mb-2">
                     {counts[index]}{stat.suffix}
                   </div>
                   <div className="text-gray-400 text-sm md:text-base">{stat.label}</div>
