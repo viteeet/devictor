@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Smart programming, automation and custom development.",
+    "subtitle": "I transform your ideas into robust and efficient digital solutions",
+    "cta": "Talk to Me",
+    "ctaSecondary": "View Portfolio"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm Victor Hugo, a full stack developer specialized in creating digital solutions that drive results. With experience in Next.js, React, Python and automation development, I bring efficiency and innovation to your projects.",
+    "skills": {
+      "fullstack": "Full Stack Development",
+      "automation": "Python Automations",
+      "databases": "Databases",
+      "apis": "APIs & Integrations",
+      "cloud": "Cloud & DevOps",
+      "analytics": "Analytics & Dashboards"
+    },
+    "downloadCV": "Download CV"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Complete solutions for your digital needs",
+    "web": {
+      "title": "Web Development",
+      "description": "Modern websites and applications with Next.js and React"
+    },
+    "automation": {
+      "title": "Python Automation",
+      "description": "Automate processes and save time"
+    },
+    "dashboards": {
+      "title": "Dashboards & Integrations",
+      "description": "Visualize data and integrate systems"
+    },
+    "bots": {
+      "title": "Bots & Chatbots",
+      "description": "Customer service automation and intelligent interactions"
+    },
+    "landing": {
+      "title": "Landing Pages & SEO",
+      "description": "Pages optimized for conversion and search"
+    },
+    "custom": {
+      "title": "Custom Solutions",
+      "description": "Tailored development for your needs"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Some of the projects I've developed"
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "subtitle": "What clients say about my work"
+  },
+  "contact": {
+    "title": "Let's Talk?",
+    "subtitle": "Ask your questions or request a quote",
+    "formTitle": "Contact Form",
+    "formSubtitle": "Fill out the fields below and I'll get back to you soon",
+    "orWhatsApp": "Prefer to chat directly?",
+    "openInNewTab": "Open form in new tab",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "submit": "Send Message",
+    "whatsapp": "WhatsApp"
+  },
+  "footer": {
+    "rights": "© {year} Victor Hugo. All rights reserved.",
+    "privacy": "Privacy Policy"
+  }
+}
+

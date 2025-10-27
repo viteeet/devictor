@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "services": "Serviços",
+    "portfolio": "Portfólio",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "Programação inteligente, automação e desenvolvimento sob medida.",
+    "subtitle": "Transformo suas ideias em soluções digitais robustas e eficientes",
+    "cta": "Fale Comigo",
+    "ctaSecondary": "Ver Portfólio"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "description": "Sou Victor Hugo, desenvolvedor full stack especializado em criar soluções digitais que impulsionam resultados. Com experiência em Next.js, React, Python e desenvolvimento de automações, trago eficiência e inovação para seus projetos.",
+    "skills": {
+      "fullstack": "Desenvolvimento Full Stack",
+      "automation": "Automações em Python",
+      "databases": "Bancos de Dados",
+      "apis": "APIs e Integrações",
+      "cloud": "Cloud & DevOps",
+      "analytics": "Analytics & Dashboards"
+    },
+    "downloadCV": "Baixar CV"
+  },
+  "services": {
+    "title": "Serviços",
+    "subtitle": "Soluções completas para sua necessidade digital",
+    "web": {
+      "title": "Desenvolvimento Web",
+      "description": "Sites e aplicações modernas com Next.js e React"
+    },
+    "automation": {
+      "title": "Automação em Python",
+      "description": "Automatize processos e economize tempo"
+    },
+    "dashboards": {
+      "title": "Dashboards & Integrações",
+      "description": "Visualize dados e integre sistemas"
+    },
+    "bots": {
+      "title": "Bots & Chatbots",
+      "description": "Automação de atendimento e interações inteligentes"
+    },
+    "landing": {
+      "title": "Landing Pages & SEO",
+      "description": "Páginas otimizadas para conversão e busca"
+    },
+    "custom": {
+      "title": "Soluções Customizadas",
+      "description": "Desenvolvimento sob medida para suas necessidades"
+    }
+  },
+  "portfolio": {
+    "title": "Portfólio",
+    "subtitle": "Alguns dos projetos que desenvolvi"
+  },
+  "testimonials": {
+    "title": "Depoimentos",
+    "subtitle": "O que clientes dizem sobre meu trabalho"
+  },
+  "contact": {
+    "title": "Vamos Conversar?",
+    "subtitle": "Tire suas dúvidas ou solicite um orçamento",
+    "formTitle": "Formulário de Contato",
+    "formSubtitle": "Preencha os campos abaixo e entrarei em contato em breve",
+    "orWhatsApp": "Prefere conversar diretamente?",
+    "openInNewTab": "Abrir formulário em nova aba",
+    "name": "Nome",
+    "email": "Email",
+    "phone": "Telefone",
+    "message": "Mensagem",
+    "submit": "Enviar Mensagem",
+    "whatsapp": "WhatsApp"
+  },
+  "footer": {
+    "rights": "© {year} Victor Hugo. Todos os direitos reservados.",
+    "privacy": "Política de Privacidade"
+  }
+}
+

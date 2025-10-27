@@ -1,0 +1,17 @@
+{
+  "name": "DEVICTOR - Victor Hugo",
+  "short_name": "DEVICTOR",
+  "description": "Desenvolvedor Full Stack | Programação inteligente, automação e desenvolvimento sob medida",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "192x192",
+      "type": "image/x-icon"
+    }
+  ]
+}
+
