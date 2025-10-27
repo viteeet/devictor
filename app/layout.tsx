@@ -56,6 +56,9 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
   },
   manifest: '/site.webmanifest',
+};
+
+export const viewport = {
   themeColor: '#0f172a',
 };
 
