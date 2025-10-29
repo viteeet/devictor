@@ -52,12 +52,12 @@ export function Skills() {
           whileInView={{opacity: 1, y: 0}}
           viewport={{once: true}}
           transition={{duration: 0.8}}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-display font-bold mb-2 bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 bg-gradient-to-r from-secondary via-accent to-secondary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-text">
             Stack & Tecnologias
           </h2>
-          <p className="text-sm text-gray-400">
+          <p className="text-gray-400 max-w-2xl mx-auto">
             Conjunto integrado de habilidades que trabalham em sinergia
           </p>
         </motion.div>
@@ -72,16 +72,20 @@ export function Skills() {
                 whileInView={{opacity: 1, y: 0}}
                 viewport={{once: true}}
                 transition={{duration: 0.5, delay: index * 0.1}}
-                className="p-6 bg-gradient-to-br from-primary/10 to-secondary/5 rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105"
+                whileHover={{scale: 1.05, y: -5}}
+                className="p-6 bg-gradient-to-br from-primary/10 to-secondary/5 rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-300 relative overflow-hidden group"
               >
-                <div className="flex items-center gap-3 mb-4">
+                {/* Efeito de brilho no hover */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 -skew-x-12 group-hover:translate-x-[400%]"></div>
+                
+                <div className="flex items-center gap-3 mb-4 relative z-10">
                   <div className={`p-3 bg-gradient-to-br ${group.color} rounded-lg`}>
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="font-semibold text-lg text-white">{group.category}</h3>
                 </div>
                 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 relative z-10">
                   {group.skills.map((skill, skillIndex) => (
                     <motion.span
                       key={skill}
@@ -89,7 +93,8 @@ export function Skills() {
                       whileInView={{opacity: 1, scale: 1}}
                       viewport={{once: true}}
                       transition={{delay: 0.1 + skillIndex * 0.05}}
-                      className="px-3 py-1 bg-darker border border-primary/20 rounded-full text-sm text-gray-300"
+                      whileHover={{scale: 1.1}}
+                      className="px-3 py-1 bg-darker border border-primary/20 rounded-full text-sm text-gray-300 hover:border-primary/50 hover:text-white transition-all cursor-default"
                     >
                       {skill}
                     </motion.span>
