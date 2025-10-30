@@ -5,18 +5,18 @@ import {Quote} from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Equipe de TI',
-    company: 'REVERSA',
+    name: 'pessoa 1',
+    company: 'xxxxx',
     text: 'Victor desenvolveu soluções personalizadas que otimizaram nossos processos internos. Profissional dedicado, código de qualidade e entregas sempre no prazo. Recomendamos!',
   },
   {
-    name: 'Diretoria',
-    company: 'CARTULAR',
+    name: 'pessoa 2',
+    company: 'yyyyy',
     text: 'Contratamos o Victor para desenvolver automações em Python que reduziram significativamente o tempo de operação. Profissional excepcional com excelente comunicação.',
   },
   {
-    name: 'Gerência de Projetos',
-    company: 'GRUPO BIMBO',
+    name: 'pessoa 3',
+    company: 'zzzzz',
     text: 'Victor criou dashboards e sistemas de gestão que transformaram nossa análise de dados. Metodologia clara e suporte contínuo. Profissional de confiança.',
   },
 ];
