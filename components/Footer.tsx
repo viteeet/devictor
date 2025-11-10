@@ -1,6 +1,6 @@
 'use client';
 
-import {Github, Linkedin, Instagram} from 'lucide-react';
+import {Github, Linkedin} from 'lucide-react';
 import {motion} from 'framer-motion';
 
 export function Footer() {
@@ -32,15 +32,6 @@ export function Footer() {
               aria-label="LinkedIn"
             >
               <Linkedin className="w-6 h-6" />
-            </a>
-            <a
-              href="https://instagram.com/seu_instagram"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-secondary transition-colors"
-              aria-label="Instagram"
-            >
-              <Instagram className="w-6 h-6" />
             </a>
           </div>
 
