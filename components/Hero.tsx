@@ -1,9 +1,8 @@
 'use client';
 
 import React, {useState} from 'react';
-import {MessageCircle, ChevronRight} from 'lucide-react';
+import {MessageCircle} from 'lucide-react';
 import {motion} from 'framer-motion';
-import Link from 'next/link';
 import {ParticlesBackground} from './ParticlesBackground';
 
 // Função para animar o texto com efeito de digitação/programação
@@ -160,13 +159,6 @@ export function Hero() {
               <MessageCircle className="w-5 h-5" />
               <span>Falar no WhatsApp</span>
             </motion.a>
-
-            <a
-              href="#portfolio"
-              className="flex items-center gap-2 px-8 py-4 border border-primary hover:border-secondary rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105"
-            >
-              Ver Portfólio
-            </a>
           </motion.div>
         </div>
 
