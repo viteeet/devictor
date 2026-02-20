@@ -324,7 +324,7 @@ export function Portfolio() {
             const images = folderImages.length > 0
               ? folderImages
               : (Array.isArray(imagesArray) && imagesArray.length > 0 ? imagesArray : image ? [image] : []);
-            const hasLink = url && url.trim() !== '';
+            const hasLink = Boolean(url && String(url).trim() !== '');
 
             return (
               <ProjectCard
