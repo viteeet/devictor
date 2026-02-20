@@ -1,65 +1,82 @@
 'use client';
 
-import {motion} from 'framer-motion';
-import {Quote} from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Quote, Building2, Linkedin } from 'lucide-react';
+import { useLocale } from '@/contexts/LocaleContext';
 
-const testimonials = [
-  {
-    name: 'pessoa 1',
-    company: 'xxxxx',
-    text: 'Victor desenvolveu soluções personalizadas que otimizaram nossos processos internos. Profissional dedicado, código de qualidade e entregas sempre no prazo. Recomendamos!',
-  },
-  {
-    name: 'pessoa 2',
-    company: 'yyyyy',
-    text: 'Contratamos o Victor para desenvolver automações em Python que reduziram significativamente o tempo de operação. Profissional excepcional com excelente comunicação.',
-  },
-  {
-    name: 'pessoa 3',
-    company: 'zzzzz',
-    text: 'Victor criou dashboards e sistemas de gestão que transformaram nossa análise de dados. Metodologia clara e suporte contínuo. Profissional de confiança.',
-  },
-];
+const LINKEDIN_PROFILE_URL = 'https://br.linkedin.com/in/victor-hugo-8785451b9';
+
+type TestimonialItem = { name: string; company: string; text: string; image?: string };
 
 export function Testimonials() {
+  const { t, get } = useLocale();
+  const items = (get('testimonials.items') as TestimonialItem[]) ?? [];
 
   return (
-    <section className="py-20 bg-dark">
+    <section id="testimonials" className="py-20 bg-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{opacity: 0, y: 20}}
-          whileInView={{opacity: 1, y: 0}}
-          viewport={{once: true}}
-          transition={{duration: 0.8}}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 bg-gradient-to-r from-secondary via-accent to-secondary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-text">
-            Depoimentos
+            {t('testimonials.title')}
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">O que os clientes dizem sobre o meu trabalho</p>
+          <p className="text-gray-400 max-w-2xl mx-auto">{t('testimonials.subtitle')}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {items.map((item, index) => (
             <motion.div
               key={index}
-              initial={{opacity: 0, y: 20}}
-              whileInView={{opacity: 1, y: 0}}
-              viewport={{once: true}}
-              transition={{duration: 0.5, delay: index * 0.1}}
-              className="p-6 bg-gradient-to-br from-primary/10 to-secondary/5 rounded-xl border border-primary/20"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="p-6 bg-gradient-to-br from-primary/10 to-secondary/5 rounded-xl border border-primary/20 flex flex-col"
             >
-              <Quote className="w-8 h-8 text-primary mb-4" />
-              <p className="text-gray-300 mb-4">{testimonial.text}</p>
+              {/* Espaço para foto da empresa */}
+              <div className="w-16 h-16 rounded-lg bg-darker/60 border border-primary/20 flex items-center justify-center mb-4 overflow-hidden shrink-0">
+                {item.image ? (
+                  <img
+                    src={item.image}
+                    alt={item.company}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <Building2 className="w-8 h-8 text-gray-500" />
+                )}
+              </div>
+              <Quote className="w-8 h-8 text-primary mb-3" />
+              <p className="text-gray-300 mb-4 flex-1">{item.text}</p>
               <div>
-                <p className="font-semibold text-secondary">{testimonial.name}</p>
-                <p className="text-sm text-gray-400">{testimonial.company}</p>
+                <p className="font-semibold text-secondary">{item.name}</p>
+                {item.company ? <p className="text-sm text-gray-400">{item.company}</p> : null}
               </div>
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <a
+            href={LINKEDIN_PROFILE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary/20 hover:bg-primary/30 border border-primary/30 text-secondary font-medium transition-colors"
+          >
+            <Linkedin className="w-5 h-5" />
+            {t('testimonials.viewOnLinkedIn')}
+          </a>
+        </motion.div>
       </div>
     </section>
   );
 }
-

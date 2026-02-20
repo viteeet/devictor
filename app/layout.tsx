@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
+import { Providers } from '@/components/Providers';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -17,27 +18,27 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL('https://devictor.com.br'),
   title: {
-    default: 'DEVICTOR - Victor Hugo | Desenvolvedor Full Stack',
-    template: '%s | DEVICTOR'
+    default: 'VCTR — Estúdio de Engenharia Digital',
+    template: '%s | VCTR',
   },
-  description: 'Programação inteligente, automação e desenvolvimento sob medida. Desenvolvimento web, automações Python, dashboards e soluções digitais personalizadas.',
-  keywords: ['desenvolvedor', 'full stack', 'Next.js', 'React', 'Python', 'automação', 'web development'],
+  description: 'Sistemas escaláveis. Arquitetura de dados. Produtos digitais. Frontend, backend, automação e infraestrutura.',
+  keywords: ['engenharia digital', 'VCTR', 'Victor Hugo', 'Next.js', 'React', 'Python', 'automação', 'APIs', 'dados'],
   authors: [{ name: 'Victor Hugo' }],
   creator: 'Victor Hugo',
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    alternateLocale: 'en_US',
+    alternateLocale: ['en_US', 'es_ES'],
     url: 'https://devictor.com.br',
-    title: 'DEVICTOR - Victor Hugo | Desenvolvedor Full Stack',
-    description: 'Programação inteligente, automação e desenvolvimento sob medida.',
-    siteName: 'DEVICTOR',
+    title: 'VCTR — Estúdio de Engenharia Digital',
+    description: 'Sistemas escaláveis. Arquitetura de dados. Produtos digitais.',
+    siteName: 'VCTR',
     images: [],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DEVICTOR - Victor Hugo | Desenvolvedor Full Stack',
-    description: 'Programação inteligente, automação e desenvolvimento sob medida.',
+    title: 'VCTR — Estúdio de Engenharia Digital',
+    description: 'Sistemas escaláveis. Arquitetura de dados. Produtos digitais.',
     creator: '@victorhugo',
     images: [],
   },
@@ -82,8 +83,8 @@ export default function RootLayout({
               jobTitle: 'Full Stack Developer',
               url: 'https://devictor.com.br',
               sameAs: [
-                'https://github.com/victorhugo',
-                'https://linkedin.com/in/victorhugo',
+                'https://github.com/viteeet',
+                'https://br.linkedin.com/in/victor-hugo-8785451b9',
               ],
               knowsAbout: [
                 'Web Development',
@@ -96,7 +97,7 @@ export default function RootLayout({
             }),
           }}
         />
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

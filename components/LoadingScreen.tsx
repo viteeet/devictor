@@ -26,69 +26,30 @@ export function LoadingScreen() {
         >
           {/* Animação de carga */}
           <div className="relative">
-            {/* Logo destacado separadamente */}
-            <div className="flex gap-3 items-center justify-center">
-              {/* DEV */}
-              <motion.div
-                className="text-5xl md:text-7xl lg:text-8xl font-display font-bold"
-                initial={{opacity: 0, y: -50, rotateX: 90}}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  rotateX: 0,
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.2,
-                  scale: {
-                    duration: 2,
-                    repeat: Infinity,
-                    repeatDelay: 1,
-                  },
-                }}
-              >
-                <span className="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
-                  DEV
-                </span>
-              </motion.div>
-
-              {/* Barra separadora */}
-              <motion.div
-                className="w-1 h-20 bg-gradient-to-b from-primary via-secondary to-accent"
-                initial={{scaleY: 0}}
-                animate={{scaleY: 1}}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.8,
-                }}
-              />
-
-              {/* VICTOR */}
-              <motion.div
-                className="text-5xl md:text-7xl lg:text-8xl font-display font-bold"
-                initial={{opacity: 0, y: -50, rotateX: 90}}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  rotateX: 0,
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: 1,
-                  scale: {
-                    duration: 2,
-                    repeat: Infinity,
-                    repeatDelay: 1.2,
-                  },
-                }}
-              >
-                <span className="bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent">
-                  VICTOR
-                </span>
-              </motion.div>
-            </div>
+            {/* Logo */}
+            <motion.div
+              className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-center"
+              initial={{opacity: 0, y: -50, rotateX: 90}}
+              animate={{
+                opacity: 1,
+                y: 0,
+                rotateX: 0,
+                scale: [1, 1.05, 1],
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.2,
+                scale: {
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatDelay: 1,
+                },
+              }}
+            >
+              <span className="bg-gradient-to-r from-secondary via-accent to-primary bg-clip-text text-transparent">
+                VCTR STUDIO
+              </span>
+            </motion.div>
 
             {/* Barra de progresso */}
             <motion.div

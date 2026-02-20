@@ -1,117 +1,101 @@
 'use client';
 
-import {useState, useEffect} from 'react';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Autoplay, Pagination, Navigation} from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
+import { ExternalLink, ImageIcon } from 'lucide-react';
+import { useLocale } from '@/contexts/LocaleContext';
+
+const PROJECT_KEYS = ['item1', 'item2', 'item3'] as const;
+
+type ProjectItem = {
+  num: string;
+  type: string;
+  name: string;
+  description: string;
+  cta: string;
+  url?: string;
+  image?: string;
+};
 
 export function Portfolio() {
-  const [images, setImages] = useState<string[]>([]);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  useEffect(() => {
-    // Simulando busca de imagens da pasta /public/portfolio
-    // Em produção, você pode listar os arquivos de forma dinâmica
-    const portfolioImages = [
-      '/portfolio/1.jpg',
-      '/portfolio/2.jpg',
-      '/portfolio/3.jpg',
-      '/portfolio/4.jpg',
-      '/portfolio/5.jpg',
-    ];
-    setImages(portfolioImages);
-  }, []);
-
-  if (images.length === 0) return null;
+  const { t, get } = useLocale();
 
   return (
-    <section id="portfolio" className="py-20 bg-darker">
+    <section id="projects" className="py-20 bg-darker">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{opacity: 0, y: 20}}
-          whileInView={{opacity: 1, y: 0}}
-          viewport={{once: true}}
-          transition={{duration: 0.8}}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 bg-gradient-to-r from-secondary via-accent to-secondary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-text">
-            Portfólio
+            {t('projects.title')}
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">Alguns dos projetos que desenvolvi</p>
+          <p className="text-gray-400 max-w-2xl mx-auto">{t('projects.subtitle')}</p>
         </motion.div>
 
-        <motion.div
-          initial={{opacity: 0}}
-          whileInView={{opacity: 1}}
-          viewport={{once: true}}
-          transition={{duration: 0.8}}
-        >
-          <Swiper
-            modules={[Autoplay, Pagination, Navigation]}
-            spaceBetween={30}
-            slidesPerView={1}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: true,
-            }}
-            navigation
-            breakpoints={{
-              640: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
-            }}
-            className="portfolio-swiper"
-          >
-            {images.map((image, index) => (
-              <SwiperSlide key={index}>
-                <motion.div 
-                  className="relative aspect-video overflow-hidden rounded-lg bg-gradient-to-br from-primary/20 to-secondary/10 cursor-pointer group" 
-                  onClick={() => setSelectedImage(image)}
-                  whileHover={{scale: 1.05, rotateY: 5, z: 50}}
-                  style={{perspective: 1000, transformStyle: 'preserve-3d'}}
-                  transition={{duration: 0.3}}
-                >
-                  <div className="absolute inset-0 flex items-center justify-center bg-darker/60 group-hover:bg-darker/40 transition-colors">
-                    <span className="text-white font-semibold">Projeto {index + 1}</span>
-                  </div>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {PROJECT_KEYS.map((key, index) => {
+            const item = get(`projects.${key}`) as ProjectItem | null;
+            if (!item || typeof item !== 'object') return null;
+            const { num, type, name, description, cta, url = '', image = '' } = item;
+            const hasLink = url && url.trim() !== '';
 
-        {/* Lightbox */}
-        {selectedImage && (
-          <div
-            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-            onClick={() => setSelectedImage(null)}
-          >
-            <div className="relative max-w-4xl max-h-[90vh]">
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 text-white text-2xl font-bold bg-black/50 w-10 h-10 rounded-full hover:bg-black/70"
+            return (
+              <motion.div
+                key={key}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex flex-col p-8 bg-gradient-to-br from-primary/10 to-secondary/5 rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-300"
               >
-                ×
-              </button>
-              <img
-                src={selectedImage}
-                alt="Portfolio"
-                className="max-w-full max-h-[90vh] object-contain rounded-lg"
-              />
-            </div>
-          </div>
-        )}
+                {/* Espaço para foto do projeto */}
+                <div className="aspect-video w-full rounded-lg bg-darker/60 border border-primary/20 flex items-center justify-center mb-6 overflow-hidden">
+                  {image ? (
+                    <img
+                      src={image}
+                      alt={name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="flex flex-col items-center justify-center gap-2 text-gray-500">
+                      <ImageIcon className="w-10 h-10" />
+                      <span className="text-xs">Foto do projeto</span>
+                    </div>
+                  )}
+                </div>
+
+                <span className="text-4xl font-display font-bold text-secondary/80">{num}</span>
+                <p className="text-sm text-gray-500 mt-1">{type}</p>
+                <h3 className="text-lg font-semibold text-white mt-2">
+                  <span className="text-secondary">{name}</span>
+                </h3>
+                <p className="text-gray-400 text-sm mt-3 mb-6 flex-1">{description}</p>
+                {hasLink ? (
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-secondary hover:text-accent font-medium text-sm transition-colors"
+                  >
+                    {cta}
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                ) : (
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-2 text-secondary hover:text-accent font-medium text-sm transition-colors"
+                  >
+                    {cta} →
+                  </a>
+                )}
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
 }
-

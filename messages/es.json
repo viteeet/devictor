@@ -1,0 +1,121 @@
+{
+  "nav": {
+    "services": "Qué hago",
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Victor Hugo",
+    "subtitle": "Desarrollador Full Stack",
+    "tagline": "Sistemas escalables. Arquitectura de datos. Productos digitales.",
+    "cta": "Hablar por WhatsApp"
+  },
+  "services": {
+    "title": "¿Qué hago?",
+    "subtitle": "Servicios de ingeniería digital para productos que escalan",
+    "frontend": {
+      "title": "Sistemas Frontend",
+      "description": "Creación de sistemas web modernos, responsivos y performantes.",
+      "tags": ["React", "Next.js", "TypeScript"]
+    },
+    "backend": {
+      "title": "Arquitectura Backend",
+      "description": "APIs, servicios y arquitectura que escalan con tu negocio.",
+      "tags": ["Python", "Node.js", "APIs"]
+    },
+    "data": {
+      "title": "Datos y Automatización",
+      "description": "Pipelines de datos, automatización de procesos e integraciones.",
+      "tags": ["PostgreSQL", "MongoDB", "Automation"]
+    },
+    "infra": {
+      "title": "Infraestructura en la Nube",
+      "description": "Deploy, infraestructura y DevOps para mantener todo en marcha.",
+      "tags": ["Vercel", "Docker", "CI/CD"]
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Proyectos seleccionados",
+    "item1": {
+      "num": "01",
+      "type": "MOBI FIDC",
+      "name": "SGM — Sistema General Modulado",
+      "description": "Sistema General Modulado desarrollado para MOBI FIDC. Similar a un CRM para operaciones y automatización de un fondo de inversión — gestión de partícipes, conciliación, compliance y flujos operativos integrados en una sola plataforma. Consume diversas APIs para la elaboración de informes automáticos.",
+      "cta": "Hablar sobre el proyecto",
+      "url": "",
+      "image": ""
+    },
+    "item2": {
+      "num": "02",
+      "type": "Reversa Recuperação de Ativos",
+      "name": "Reversa CRM",
+      "description": "CRM a medida para Reversa Recuperação de Ativos. Gestión de relación con clientes, seguimiento de cobros, automatización de procesos de recuperación e informes integrados en una interfaz moderna y responsiva.",
+      "cta": "Ver proyecto",
+      "url": "https://reversa.vercel.app/",
+      "image": ""
+    },
+    "item3": {
+      "num": "03",
+      "type": "Informes",
+      "name": "Informes gerenciales externos",
+      "description": "Plataforma de informes gerenciales con datos almacenados de forma segura. Acceso controlado, visualizaciones y exportaciones para la toma de decisiones, con foco en confidencialidad y rendimiento. Actualización automática mediante robots en Python.",
+      "cta": "Ver proyecto",
+      "url": "https://relatorio-gerente.vercel.app/",
+      "image": ""
+    }
+  },
+  "about": {
+    "title": "Sobre mí",
+    "role": "Victor Hugo — Fundador",
+    "bio": "Soy Victor Hugo, desarrollador y fundador de VCTR. Trabajo con sistemas que escalan — de producto a datos y automatización. Frontend, backend, arquitectura de datos y automatización de procesos, con foco en claridad, rendimiento e impacto real en el negocio.",
+    "stats": {
+      "years": "Años de experiencia",
+      "clients": "Clientes satisfechos",
+      "projects": "Proyectos realizados",
+      "companies": "Empresas / productos"
+    },
+    "linkedin": "Ver perfil en LinkedIn"
+  },
+  "testimonials": {
+    "title": "Testimonios",
+    "subtitle": "Lo que dicen los clientes sobre mi trabajo",
+    "viewOnLinkedIn": "Ver todas las recomendaciones en LinkedIn",
+    "items": [
+      {
+        "name": "Lucas A.",
+        "company": "",
+        "text": "Un profesional con capacidad analítica estratégica y foco en resultados, siempre buscó resolver todas las situaciones de la mejor manera posible. Es un profesional increíble para trabajar y se desarrolla con facilidad, siempre dispuesto a ayudar a los compañeros de equipo con todo empeño y motivación. ¡Lo recomiendo por el gran profesional que es!",
+        "image": ""
+      },
+      {
+        "name": "persona 2",
+        "company": "yyyyy",
+        "text": "Contratamos a Victor para desarrollar automatizaciones en Python que redujeron significativamente el tiempo de operación. Profesional excepcional con excelente comunicación.",
+        "image": ""
+      },
+      {
+        "name": "persona 3",
+        "company": "zzzzz",
+        "text": "Victor creó dashboards y sistemas de gestión que transformaron nuestro análisis de datos. Metodología clara y soporte continuo. Profesional de confianza.",
+        "image": ""
+      }
+    ]
+  },
+  "contact": {
+    "title": "¿Hablamos?",
+    "subtitle": "Cuenta tu idea o solicita una propuesta. Respuesta por WhatsApp o correo.",
+    "cta": "Hablar por WhatsApp",
+    "orCall": "O llama al",
+    "orEmail": "O envía un correo"
+  },
+  "footer": {
+    "rights": "2026 VCTR Studio. Estudio independiente de desarrollo de software fundado por Victor.",
+    "privacy": "Privacidad"
+  },
+  "common": {
+    "phone": "+39 331 388 8587",
+    "email": "victor.hg.pereira@gmail.com"
+  }
+}
