@@ -45,31 +45,34 @@
       "description": "Sistema Geral Modulado desenvolvido para a MOBI FIDC. Similar a um CRM, utilizado para realizar operações e automatizar todas as rotinas de um fundo de investimento — gestão de cotistas, conciliação, compliance e fluxos operacionais integrados em uma única plataforma. Consome diversas APIs para elaboração de relatórios automáticos.",
       "cta": "Falar sobre o projeto",
       "url": "",
-      "image": ""
+      "image": "",
+      "images": ["/portfolio/projeto 1/proj1.png"]
     },
     "item2": {
       "num": "02",
-      "type": "Reversa Recuperação de Ativos",
+      "type": "Reversa Capital",
       "name": "Reversa CRM",
-      "description": "CRM sob medida para a Reversa Recuperação de Ativos. Gestão do relacionamento com clientes, acompanhamento de cobranças, automação de processos de recuperação e relatórios integrados em interface moderna e responsiva.",
+      "description": "CRM sob medida para a Reversa Capital. Gestão do relacionamento com clientes, acompanhamento de cobranças, automação de processos de recuperação e relatórios integrados em interface moderna e responsiva.",
       "cta": "Ver projeto",
       "url": "https://reversa.vercel.app/",
-      "image": ""
+      "image": "",
+      "images": ["/portfolio/projeto 2/proj2.png"]
     },
     "item3": {
       "num": "03",
-      "type": "Relatórios",
+      "type": "MOBI FIDC",
       "name": "Relatórios gerenciais externos",
       "description": "Plataforma de relatórios gerenciais com dados armazenados de forma segura. Acesso controlado, visualizações e exportações para apoio à tomada de decisão, com foco em confidencialidade e performance. Atualização automática via robôs em Python.",
       "cta": "Ver projeto",
-      "url": "https://relatorio-gerente.vercel.app/",
-      "image": ""
+      "url": "https://mobi-comercial.vercel.app/login",
+      "image": "",
+      "images": ["/portfolio/projeto 3/proj3.png"]
     }
   },
   "about": {
     "title": "Sobre mim",
     "role": "Victor Hugo — Fundador",
-    "bio": "Sou Victor Hugo, desenvolvedor e fundador do VCTR. Trabalho com sistemas que escalam — de produto a dados e automação. Frontend, backend, arquitetura de dados e automação de processos, com foco em clareza, performance e impacto real no negócio.",
+    "bio": "Sou Victor Hugo, desenvolvedor e fundador do VCTR, graduado em Análise e Desenvolvimento de Sistemas. Trabalho com sistemas que escalam — de produto a dados e automação. Frontend, backend, arquitetura de dados e automação de processos, com foco em clareza, performance e impacto real no negócio.",
     "stats": {
       "years": "Anos de experiência",
       "clients": "Clientes satisfeitos",

@@ -49,27 +49,27 @@
     },
     "item2": {
       "num": "02",
-      "type": "Reversa Recuperação de Ativos",
+      "type": "Reversa Capital",
       "name": "Reversa CRM",
-      "description": "CRM a medida para Reversa Recuperação de Ativos. Gestión de relación con clientes, seguimiento de cobros, automatización de procesos de recuperación e informes integrados en una interfaz moderna y responsiva.",
+      "description": "CRM a medida para Reversa Capital. Gestión de relación con clientes, seguimiento de cobros, automatización de procesos de recuperación e informes integrados en una interfaz moderna y responsiva.",
       "cta": "Ver proyecto",
       "url": "https://reversa.vercel.app/",
       "image": ""
     },
     "item3": {
       "num": "03",
-      "type": "Informes",
+      "type": "MOBI FIDC",
       "name": "Informes gerenciales externos",
       "description": "Plataforma de informes gerenciales con datos almacenados de forma segura. Acceso controlado, visualizaciones y exportaciones para la toma de decisiones, con foco en confidencialidad y rendimiento. Actualización automática mediante robots en Python.",
       "cta": "Ver proyecto",
-      "url": "https://relatorio-gerente.vercel.app/",
+      "url": "https://mobi-comercial.vercel.app/login",
       "image": ""
     }
   },
   "about": {
     "title": "Sobre mí",
     "role": "Victor Hugo — Fundador",
-    "bio": "Soy Victor Hugo, desarrollador y fundador de VCTR. Trabajo con sistemas que escalan — de producto a datos y automatización. Frontend, backend, arquitectura de datos y automatización de procesos, con foco en claridad, rendimiento e impacto real en el negocio.",
+    "bio": "Soy Victor Hugo, desarrollador y fundador de VCTR, graduado en Análisis y Desarrollo de Sistemas. Trabajo con sistemas que escalan — de producto a datos y automatización. Frontend, backend, arquitectura de datos y automatización de procesos, con foco en claridad, rendimiento e impacto real en el negocio.",
     "stats": {
       "years": "Años de experiencia",
       "clients": "Clientes satisfechos",

@@ -119,14 +119,14 @@ export function Skills() {
 
   return (
     <>
-      <section className="py-20 bg-dark" id="stack">
+      <section className="py-20 bg-darker" id="stack">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{opacity: 0, y: 20}}
           whileInView={{opacity: 1, y: 0}}
           viewport={{once: true}}
           transition={{duration: 0.8}}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 bg-gradient-to-r from-secondary via-accent to-secondary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-text">
             Stack & Tecnologias
@@ -147,7 +147,7 @@ export function Skills() {
                 viewport={{once: true}}
                 transition={{duration: 0.5, delay: index * 0.1}}
                 whileHover={{scale: 1.05, y: -5}}
-                className="p-6 bg-gradient-to-br from-primary/10 to-secondary/5 rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-300 relative overflow-hidden group cursor-pointer"
+                className="p-6 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-white/20 transition-all duration-300 relative overflow-hidden group cursor-pointer"
                 onClick={() => setSelectedSkill(group)}
               >
                 {/* Efeito de brilho no hover */}
@@ -169,7 +169,7 @@ export function Skills() {
                       viewport={{once: true}}
                       transition={{delay: 0.1 + skillIndex * 0.05}}
                       whileHover={{scale: 1.1}}
-                      className="px-3 py-1 bg-darker border border-primary/20 rounded-full text-sm text-gray-300 hover:border-primary/50 hover:text-white transition-all cursor-default"
+                      className="px-3 py-1 rounded-full text-sm text-gray-300 border border-white/10 bg-white/[0.04] hover:border-white/20 hover:text-white transition-all cursor-default"
                     >
                       {skill}
                     </motion.span>

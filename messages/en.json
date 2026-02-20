@@ -45,31 +45,34 @@
       "description": "Modular General System developed for MOBI FIDC. CRM-like platform for investment fund operations and automation — investor management, reconciliation, compliance and integrated operational workflows in a single platform. Consumes various APIs to produce automatic reports.",
       "cta": "Talk about the project",
       "url": "",
-      "image": ""
+      "image": "",
+      "images": ["/portfolio/projeto 1/proj1.png"]
     },
     "item2": {
       "num": "02",
-      "type": "Reversa Recuperação de Ativos",
+      "type": "Reversa Capital",
       "name": "Reversa CRM",
-      "description": "Custom CRM for Reversa Recuperação de Ativos. Customer relationship management, collection tracking, recovery process automation and integrated reporting in a modern, responsive interface.",
+      "description": "Custom CRM for Reversa Capital. Customer relationship management, collection tracking, recovery process automation and integrated reporting in a modern, responsive interface.",
       "cta": "View project",
       "url": "https://reversa.vercel.app/",
-      "image": ""
+      "image": "",
+      "images": ["/portfolio/projeto 2/proj2.png"]
     },
     "item3": {
       "num": "03",
-      "type": "Reports",
+      "type": "MOBI FIDC",
       "name": "External management reports",
       "description": "Management reporting platform with securely stored data. Controlled access, dashboards and exports for decision-making, with a focus on confidentiality and performance. Automatic updates via Python robots.",
       "cta": "View project",
-      "url": "https://relatorio-gerente.vercel.app/",
-      "image": ""
+      "url": "https://mobi-comercial.vercel.app/login",
+      "image": "",
+      "images": ["/portfolio/projeto 3/proj3.png"]
     }
   },
   "about": {
     "title": "About me",
     "role": "Victor Hugo — Founder",
-    "bio": "I'm Victor Hugo, developer and founder of VCTR. I work with systems that scale — from product to data and automation. Frontend, backend, data architecture and process automation, with a focus on clarity, performance and real business impact.",
+    "bio": "I'm Victor Hugo, developer and founder of VCTR, graduated in Systems Analysis and Development. I work with systems that scale — from product to data and automation. Frontend, backend, data architecture and process automation, with a focus on clarity, performance and real business impact.",
     "stats": {
       "years": "Years of experience",
       "clients": "Satisfied clients",

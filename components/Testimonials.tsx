@@ -13,14 +13,14 @@ export function Testimonials() {
   const items = (get('testimonials.items') as TestimonialItem[]) ?? [];
 
   return (
-    <section id="testimonials" className="py-20 bg-dark">
+    <section id="testimonials" className="py-20 bg-darker">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 bg-gradient-to-r from-secondary via-accent to-secondary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-text">
             {t('testimonials.title')}
@@ -28,7 +28,7 @@ export function Testimonials() {
           <p className="text-gray-400 max-w-2xl mx-auto">{t('testimonials.subtitle')}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {items.map((item, index) => (
             <motion.div
               key={index}
@@ -36,10 +36,9 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-6 bg-gradient-to-br from-primary/10 to-secondary/5 rounded-xl border border-primary/20 flex flex-col"
+              className="p-6 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-white/20 transition-all duration-300 flex flex-col"
             >
-              {/* Espaço para foto da empresa */}
-              <div className="w-16 h-16 rounded-lg bg-darker/60 border border-primary/20 flex items-center justify-center mb-4 overflow-hidden shrink-0">
+              <div className="w-16 h-16 rounded-xl border border-white/10 bg-white/[0.04] flex items-center justify-center mb-4 overflow-hidden shrink-0">
                 {item.image ? (
                   <img
                     src={item.image}
