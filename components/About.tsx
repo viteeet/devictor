@@ -39,9 +39,9 @@ export function About() {
   }, [isInView]);
 
   return (
-    <section id="about" className="py-14 bg-darker">
+    <section id="about" className="py-14 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-display font-bold mb-10 text-center text-slate-900">
+        <h2 className="text-3xl md:text-4xl font-display font-bold mb-10 text-center text-slate-100">
           {t('about.title')}
         </h2>
 
@@ -57,12 +57,12 @@ export function About() {
             <img
               src="/profile.jpeg"
               alt="Victor Hugo"
-              className="w-48 h-48 md:w-56 md:h-56 rounded-2xl object-cover border border-slate-200 shadow-md"
+              className="w-48 h-48 md:w-56 md:h-56 rounded-2xl object-cover border border-slate-700 shadow-md"
             />
           </div>
           <div className="min-w-0">
             <p className="text-lg font-semibold text-secondary mb-2">{t('about.role')}</p>
-            <p className="text-gray-400 leading-relaxed">{t('about.bio')}</p>
+            <p className="text-slate-300 leading-relaxed">{t('about.bio')}</p>
             <a
               href={LINKEDIN_URL}
               target="_blank"
