@@ -61,10 +61,10 @@ function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.08 }}
-      className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden hover:border-white/20 transition-colors duration-300"
+      className="flex flex-col rounded-2xl border border-slate-700 bg-slate-800 overflow-hidden hover:bg-slate-700 hover:border-slate-600 shadow-sm transition-colors duration-300"
     >
       {/* Imagem em destaque */}
-      <div className="aspect-video w-full bg-darker/80 flex items-center justify-center overflow-hidden relative group shrink-0">
+      <div className="aspect-video w-full bg-slate-900 flex items-center justify-center overflow-hidden relative group shrink-0">
         {images.length > 0 ? (
           <>
             <AnimatePresence mode="wait">
@@ -120,17 +120,17 @@ function ProjectCard({
       </div>
 
       <div className="p-5 sm:p-6 flex flex-col flex-1">
-        <p className="text-xs font-medium uppercase tracking-wider text-gray-500 mb-1">{type}</p>
+        <p className="text-xs font-medium uppercase tracking-wider text-slate-400 mb-1">{type}</p>
         <button
           type="button"
           onClick={() => setPopupOpen(true)}
           className="text-left group mt-0.5"
         >
-          <h3 className="text-lg font-semibold text-white leading-tight group-hover:text-secondary transition-colors">
+          <h3 className="text-lg font-semibold text-slate-100 leading-tight group-hover:text-secondary transition-colors">
             {name}
           </h3>
         </button>
-        <div className="mt-4 pt-4 border-t border-white/10">
+        <div className="mt-4 pt-4 border-t border-slate-700">
           {hasLink ? (
             <a
               href={url}
@@ -178,21 +178,21 @@ function ProjectCard({
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ duration: 0.25 }}
-                className="relative w-full max-w-4xl max-h-[90vh] rounded-2xl border border-primary/30 bg-darker shadow-2xl flex flex-col md:flex-row overflow-hidden pointer-events-auto"
+                className="relative w-full max-w-4xl max-h-[90vh] rounded-2xl border border-slate-700 bg-slate-800 shadow-xl flex flex-col md:flex-row overflow-hidden pointer-events-auto"
                 onClick={(e) => e.stopPropagation()}
                 onKeyDown={(e) => e.key === 'Escape' && setPopupOpen(false)}
               >
                 <button
                   type="button"
                   onClick={() => setPopupOpen(false)}
-                  className="absolute top-3 right-3 z-10 rounded-lg p-2 text-gray-400 hover:text-white hover:bg-white/10 transition-colors shrink-0"
+                  className="absolute top-3 right-3 z-10 rounded-lg p-2 text-gray-400 hover:text-slate-900 hover:bg-white/10 transition-colors shrink-0"
                   aria-label="Fechar"
                 >
                   <X className="w-6 h-6" />
                 </button>
 
                 {/* Coluna esquerda: imagem */}
-                <div className="relative w-full md:w-[45%] md:min-w-0 flex-shrink-0 bg-darker/80">
+                <div className="relative w-full md:w-[45%] md:min-w-0 flex-shrink-0 bg-slate-900">
                   {images.length > 0 ? (
                     <div className="relative w-full aspect-video md:aspect-auto md:h-full min-h-[220px]">
                       <AnimatePresence mode="wait">
@@ -248,12 +248,12 @@ function ProjectCard({
 
                 {/* Coluna direita: texto */}
                 <div className="flex-1 min-w-0 overflow-y-auto flex flex-col justify-center p-5 sm:p-6 md:p-8">
-                  <p className="text-xs font-medium uppercase tracking-wider text-gray-500 mb-1">{type}</p>
-                  <h3 id="popup-title" className="text-xl font-semibold text-white mb-4">
+                  <p className="text-xs font-medium uppercase tracking-wider text-slate-400 mb-1">{type}</p>
+                  <h3 id="popup-title" className="text-xl font-semibold text-slate-900 mb-4">
                     <span className="text-secondary">{name}</span>
                   </h3>
-                  <p className="text-gray-400 text-base leading-relaxed">{description}</p>
-                  <div className="mt-6 pt-4 border-t border-white/10">
+                  <p className="text-slate-300 text-base leading-relaxed">{description}</p>
+                  <div className="mt-6 pt-4 border-t border-slate-700">
                     {hasLink ? (
                       <a
                         href={url}
@@ -300,7 +300,7 @@ export function Portfolio() {
   }, []);
 
   return (
-    <section id="projects" className="py-20 bg-darker">
+    <section id="projects" className="py-14 bg-darker">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -309,7 +309,7 @@ export function Portfolio() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 bg-gradient-to-r from-secondary via-accent to-secondary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-text">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-slate-900">
             {t('projects.title')}
           </h2>
           <p className="mt-2 text-gray-400 text-sm md:text-base">{t('projects.subtitle')}</p>

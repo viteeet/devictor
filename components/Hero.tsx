@@ -41,7 +41,14 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <ParticlesBackground />
       </div>
-      <div className="absolute inset-0 gradient-bg" />
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)',
+          backgroundSize: '200% 200%',
+          animation: 'gradient 15s ease infinite',
+        }}
+      />
       <div
         className="absolute inset-0 opacity-10 z-[1]"
         style={{

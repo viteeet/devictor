@@ -12,8 +12,8 @@ const config: Config = {
         primary: "#1d4ed8",
         secondary: "#3b82f6",
         accent: "#38bdf8",
-        dark: "#0f172a",
-        darker: "#111827",
+        dark: "#e2e8f0",
+        darker: "#f1f5f9",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],

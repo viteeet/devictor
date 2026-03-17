@@ -20,9 +20,9 @@ export function Navbar() {
   }, []);
 
   const navItems = [
+    { href: '#about', label: t('nav.about') },
     { href: '#services', label: t('nav.services') },
     { href: '#projects', label: t('nav.projects') },
-    { href: '#about', label: t('nav.about') },
     { href: '#contact', label: t('nav.contact') },
   ];
 
@@ -52,7 +52,7 @@ export function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-gray-300 hover:text-secondary transition-colors duration-200"
+                 className="text-slate-100 font-semibold hover:text-secondary transition-colors duration-200"
               >
                 {item.label}
               </a>
@@ -62,10 +62,10 @@ export function Navbar() {
                 <button
                   key={code}
                   onClick={() => setLocale(code)}
-                  className={`inline-flex items-center gap-1.5 px-2 py-1 text-sm font-medium rounded transition-colors whitespace-nowrap ${
-                    locale === code
-                      ? 'text-secondary bg-primary/20'
-                      : 'text-gray-400 hover:text-white'
+                   className={`inline-flex items-center gap-1.5 px-2 py-1 text-sm font-bold rounded transition-colors whitespace-nowrap ${
+                     locale === code
+                       ? 'text-secondary bg-primary/20'
+                       : 'text-slate-100 hover:text-secondary'
                   }`}
                   aria-label={`Idioma: ${label}`}
                 >
@@ -82,8 +82,8 @@ export function Navbar() {
                 <button
                   key={code}
                   onClick={() => setLocale(code)}
-                  className={`inline-flex items-center gap-1 px-2 py-1 text-xs font-medium rounded whitespace-nowrap ${
-                    locale === code ? 'text-secondary bg-primary/20' : 'text-gray-400'
+                   className={`inline-flex items-center gap-1 px-2 py-1 text-xs font-bold rounded whitespace-nowrap ${
+                     locale === code ? 'text-secondary bg-primary/20' : 'text-slate-100 hover:text-secondary'
                   }`}
                   aria-label={`Idioma: ${label}`}
                 >
@@ -121,7 +121,7 @@ export function Navbar() {
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: index * 0.1 }}
-                  className="block py-3 text-gray-300 hover:text-secondary transition-colors border-b border-primary/10 hover:border-secondary/50"
+                 className="block py-3 text-slate-100 font-semibold hover:text-secondary transition-colors border-b border-primary/10 hover:border-secondary/50"
                 >
                   {item.label}
                 </motion.a>

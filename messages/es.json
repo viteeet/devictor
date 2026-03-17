@@ -13,26 +13,41 @@
   },
   "services": {
     "title": "¿Qué hago?",
-    "subtitle": "Servicios de ingeniería digital para productos que escalan",
-    "frontend": {
-      "title": "Sistemas Frontend",
-      "description": "Creación de sistemas web modernos, responsivos y performantes.",
-      "tags": ["React", "Next.js", "TypeScript"]
+    "subtitle": "Líneas de servicio clave agrupadas en categorías estratégicas",
+    "websystems": {
+      "title": "Sistemas Web",
+      "description": "Desarrollo de sistemas y plataformas a medida para operación y crecimiento.",
+      "tags": ["CRMs", "ERPs", "SaaS", "Portales"]
     },
-    "backend": {
-      "title": "Arquitectura Backend",
-      "description": "APIs, servicios y arquitectura que escalan con tu negocio.",
-      "tags": ["Python", "Node.js", "APIs"]
+    "automation": {
+      "title": "Automatización de Procesos",
+      "description": "Automatización empresarial enfocada en productividad, confiabilidad y escala.",
+      "tags": ["RPA", "Flujos", "Reportes", "Mensajería"]
+    },
+    "integrations": {
+      "title": "Integraciones y APIs",
+      "description": "Conexiones entre sistemas internos y servicios externos para operaciones unificadas.",
+      "tags": ["Pagos", "Banca", "CRMs", "SaaS"]
     },
     "data": {
-      "title": "Datos y Automatización",
-      "description": "Pipelines de datos, automatización de procesos e integraciones.",
-      "tags": ["PostgreSQL", "MongoDB", "Automation"]
+      "title": "Dashboards y Datos",
+      "description": "Estructuración de datos y paneles gerenciales para decisiones más rápidas.",
+      "tags": ["Dashboards", "ETL", "Pipelines", "Analytics"]
     },
-    "infra": {
-      "title": "Infraestructura en la Nube",
-      "description": "Deploy, infraestructura y DevOps para mantener todo en marcha.",
-      "tags": ["Vercel", "Docker", "CI/CD"]
+    "bots": {
+      "title": "Bots e Inteligencia",
+      "description": "Bots para atención, monitoreo y procesamiento automático de información.",
+      "tags": ["WhatsApp", "Telegram", "Discord", "Scraping"]
+    },
+    "business": {
+      "title": "Sistemas Empresariales",
+      "description": "Software interno para inventario, finanzas, ventas y control operativo.",
+      "tags": ["Inventario", "Finanzas", "Ventas", "Operación"]
+    },
+    "consulting": {
+      "title": "Consultoría Técnica",
+      "description": "Acompañamiento estratégico para arquitectura, evolución de producto y decisiones técnicas.",
+      "tags": ["Arquitectura", "MVPs", "Producto", "Escalabilidad"]
     }
   },
   "projects": {
@@ -68,8 +83,8 @@
   },
   "about": {
     "title": "Sobre mí",
-    "role": "Victor Hugo — Fundador",
-    "bio": "Soy Victor Hugo, desarrollador y fundador de VCTR, graduado en Análisis y Desarrollo de Sistemas. Trabajo con sistemas que escalan — de producto a datos y automatización. Frontend, backend, arquitectura de datos y automatización de procesos, con foco en claridad, rendimiento e impacto real en el negocio.",
+    "role": "Victor Hugo — Desarrollador",
+    "bio": "Soy Victor Hugo, desarrollador de VCTR, graduado en Análisis y Desarrollo de Sistemas. Trabajo con sistemas que escalan — de producto a datos y automatización. Frontend, backend, arquitectura de datos y automatización de procesos, con foco en claridad, rendimiento e impacto real en el negocio.",
     "stats": {
       "years": "Años de experiencia",
       "clients": "Clientes satisfechos",
@@ -111,7 +126,7 @@
     "orEmail": "O envía un correo"
   },
   "footer": {
-    "rights": "2026 VCTR Studio. Estudio independiente de desarrollo de software fundado por Victor.",
+    "rights": "2026 VCTR Studio. Estudio independiente de desarrollo de software desarrollado por Victor.",
     "privacy": "Privacidad"
   },
   "common": {
