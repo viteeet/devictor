@@ -4,7 +4,7 @@ import { Footer } from '@/components/Footer';
 
 export const metadata = {
   title: 'Privacidade',
-  description: 'Política de privacidade do VCTR Studio.',
+  description: 'Política de privacidade da CODRATEC.',
 };
 
 export default function PrivacyPage() {
@@ -30,8 +30,8 @@ export default function PrivacyPage() {
             <section>
               <h2 className="text-xl font-semibold text-white mb-2">1. Responsável</h2>
               <p>
-                O VCTR Studio («nós», «nosso») é um estúdio independente de desenvolvimento de software. 
-                Esta política descreve como tratamos informações no site vctrstudio.com (ou devictor.com.br) e no contato por e-mail, WhatsApp ou telefone.
+                A CODRATEC («nós», «nosso») é uma software house independente de desenvolvimento de software.
+                Esta política descreve como tratamos informações no site codratec.com e no contato por e-mail, WhatsApp ou telefone.
               </p>
             </section>
 

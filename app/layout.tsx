@@ -16,30 +16,30 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://devictor.com.br'),
+  metadataBase: new URL('https://codratec.com'),
   title: {
-    default: 'VCTR — Estúdio de Engenharia Digital',
-    template: '%s | VCTR',
+    default: 'CODRATEC — Software House',
+    template: '%s | CODRATEC',
   },
-  description: 'Sistemas escaláveis. Arquitetura de dados. Produtos digitais. Frontend, backend, automação e infraestrutura.',
-  keywords: ['engenharia digital', 'VCTR', 'Victor Hugo', 'Next.js', 'React', 'Python', 'automação', 'APIs', 'dados'],
+  description: 'Sistemas e automações que reduzem trabalho manual e aumentam escala. Arquitetura de dados, produtos digitais e integração de ERPs.',
+  keywords: ['software house', 'CODRATEC', 'Victor Hugo', 'automação', 'sistemas web sob medida', 'APIs', 'dados', 'dashboards'],
   authors: [{ name: 'Victor Hugo' }],
-  creator: 'Victor Hugo',
+  creator: 'CODRATEC',
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
     alternateLocale: ['en_US', 'es_ES'],
-    url: 'https://devictor.com.br',
-    title: 'VCTR — Estúdio de Engenharia Digital',
-    description: 'Sistemas escaláveis. Arquitetura de dados. Produtos digitais.',
-    siteName: 'VCTR',
+    url: 'https://codratec.com',
+    title: 'CODRATEC — Software House',
+    description: 'Sistemas e automações que reduzem trabalho manual e aumentam escala.',
+    siteName: 'CODRATEC',
     images: [],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'VCTR — Estúdio de Engenharia Digital',
-    description: 'Sistemas escaláveis. Arquitetura de dados. Produtos digitais.',
-    creator: '@victorhugo',
+    title: 'CODRATEC — Software House',
+    description: 'Sistemas e automações que reduzem trabalho manual e aumentam escala.',
+    creator: '@codratec',
     images: [],
   },
   robots: {
@@ -81,9 +81,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Person',
-              name: 'Victor Hugo',
-              jobTitle: 'Full Stack Developer',
-              url: 'https://devictor.com.br',
+              name: 'CODRATEC',
+              jobTitle: 'Software House',
+              url: 'https://codratec.com',
               sameAs: [
                 'https://github.com/viteeet',
                 'https://br.linkedin.com/in/victor-hugo-8785451b9',

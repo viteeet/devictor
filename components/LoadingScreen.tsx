@@ -7,7 +7,6 @@ export function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simular loading
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2000);
@@ -24,9 +23,7 @@ export function LoadingScreen() {
           transition={{duration: 0.5}}
           className="fixed inset-0 z-[9999] bg-dark flex items-center justify-center"
         >
-          {/* Animação de carga */}
           <div className="relative">
-            {/* Logo */}
             <motion.div
               className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-center"
               initial={{opacity: 0, y: -50, rotateX: 90}}
@@ -47,46 +44,22 @@ export function LoadingScreen() {
               }}
             >
               <span className="bg-gradient-to-r from-secondary via-accent to-primary bg-clip-text text-transparent">
-                VCTR STUDIO
+                CODRATEC
               </span>
             </motion.div>
 
-            {/* Barra de progresso */}
-            <motion.div
-              className="mt-8 h-1 w-64 bg-darker rounded-full overflow-hidden mx-auto"
-              initial={{width: 0}}
-              animate={{width: 256}}
-              transition={{duration: 2, ease: 'easeInOut'}}
-            >
+            {/* Progress bar: fill animates scaleX 0→1 to show real progress */}
+            <div className="mt-8 h-1 w-64 bg-darker rounded-full overflow-hidden mx-auto">
               <motion.div
-                className="h-full bg-gradient-to-r from-secondary via-accent to-primary"
-                initial={{x: '-100%'}}
-                animate={{x: '100%'}}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
+                className="h-full bg-gradient-to-r from-secondary via-accent to-primary rounded-full origin-left"
+                initial={{scaleX: 0}}
+                animate={{scaleX: 1}}
+                transition={{duration: 1.8, ease: 'easeInOut', delay: 0.2}}
               />
-            </motion.div>
-
-            {/* Texto de carregamento */}
-            <motion.div
-              className="text-center mt-6 text-gray-400"
-              animate={{
-                opacity: [0.3, 1, 0.3],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-              }}
-            >
-              Carregando...
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       )}
     </AnimatePresence>
   );
 }
-

@@ -2,15 +2,18 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, ImageIcon, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ExternalLink, ImageIcon, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { useLocale } from '@/contexts/LocaleContext';
 import portfolioImagesFallback from '@/lib/portfolio-images.json';
 
-const PROJECT_KEYS = ['item1', 'item2', 'item3'] as const;
+const PROJECT_KEYS = ['item1', 'item2', 'item3', 'item4', 'item5', 'item6'] as const;
 const FOLDER_BY_KEY: Record<(typeof PROJECT_KEYS)[number], string> = {
   item1: 'projeto 1',
   item2: 'projeto 2',
   item3: 'projeto 3',
+  item4: 'projeto 4',
+  item5: 'projeto 5',
+  item6: 'projeto 6',
 };
 
 type ProjectItem = {
@@ -23,7 +26,7 @@ type ProjectItem = {
   images?: string[];
 };
 
-function ProjectCard({
+function ProjectShowcase({
   index,
   type,
   name,
@@ -43,8 +46,8 @@ function ProjectCard({
   images: string[];
 }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [popupOpen, setPopupOpen] = useState(false);
   const hasMultipleImages = images.length > 1;
+  const isEven = index % 2 === 0;
 
   const goPrev = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -57,284 +60,187 @@ function ProjectCard({
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.08 }}
-      className="flex flex-col rounded-2xl border border-slate-700 bg-slate-800 overflow-hidden hover:bg-slate-700 hover:border-slate-600 shadow-sm transition-colors duration-300"
+      viewport={{ once: true, margin: '-100px' }}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
+      className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-10 items-center`}
     >
-      {/* Imagem em destaque */}
-      <div className="aspect-video w-full bg-slate-900 flex items-center justify-center overflow-hidden relative group shrink-0">
-        {images.length > 0 ? (
-          <>
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={currentImageIndex}
-                src={encodeURI(images[currentImageIndex])}
-                alt={name}
-                className="w-full h-full object-cover"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              />
-            </AnimatePresence>
-            {hasMultipleImages && (
-              <>
-                <button
-                  type="button"
-                  onClick={goPrev}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
-                  aria-label="Anterior"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <button
-                  type="button"
-                  onClick={goNext}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
-                  aria-label="Próxima"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
-                  {images.map((_, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => setCurrentImageIndex(i)}
-                      className={`h-1.5 rounded-full transition-all ${i === currentImageIndex ? 'bg-secondary w-5' : 'bg-white/40 w-1.5 hover:bg-white/60'}`}
-                      aria-label={`Foto ${i + 1} de ${images.length}`}
-                    />
-                  ))}
-                </div>
-              </>
-            )}
-          </>
-        ) : (
-          <div className="flex flex-col items-center justify-center gap-2 text-gray-500 py-12">
-            <ImageIcon className="w-12 h-12" />
-            <span className="text-sm">Sem imagem</span>
-          </div>
-        )}
-      </div>
-
-      <div className="p-5 sm:p-6 flex flex-col flex-1">
-        <p className="text-xs font-medium uppercase tracking-wider text-slate-400 mb-1">{type}</p>
-        <button
-          type="button"
-          onClick={() => setPopupOpen(true)}
-          className="text-left group mt-0.5"
-        >
-          <h3 className="text-lg font-semibold text-slate-100 leading-tight group-hover:text-secondary transition-colors">
-            {name}
-          </h3>
-        </button>
-        <div className="mt-4 pt-4 border-t border-slate-700">
-          {hasLink ? (
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm text-secondary hover:text-accent font-medium transition-colors"
-            >
-              {cta}
-              <ExternalLink className="w-4 h-4 shrink-0" />
-            </a>
+      {/* Image Section */}
+      <div className="w-full lg:w-1/2 relative group">
+        <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-700" />
+        <div className="relative aspect-video w-full rounded-sm border border-slate-700/50 bg-slate-800/80 overflow-hidden shadow-xl backdrop-blur-sm">
+          {images.length > 0 ? (
+            <>
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={currentImageIndex}
+                  src={encodeURI(images[currentImageIndex])}
+                  alt={name}
+                  className="w-full h-full object-cover"
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                />
+              </AnimatePresence>
+              {hasMultipleImages && (
+                <>
+                  <button
+                    type="button"
+                    onClick={goPrev}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 hover:bg-black/80 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 border border-white/10"
+                    aria-label="Foto anterior"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={goNext}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 hover:bg-black/80 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 border border-white/10"
+                    aria-label="Próxima foto"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                    {images.map((_, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setCurrentImageIndex(i)}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${i === currentImageIndex ? 'bg-secondary w-6' : 'bg-white/40 w-1.5 hover:bg-white/70'}`}
+                        aria-label={`Ver imagem ${i + 1}`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </>
           ) : (
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-1.5 text-sm text-secondary hover:text-accent font-medium transition-colors"
-            >
-              {cta}
-            </a>
+            <div className="w-full h-full flex items-center justify-center text-slate-600">
+              <ImageIcon className="w-16 h-16 opacity-50" />
+            </div>
           )}
         </div>
       </div>
 
-      <AnimatePresence>
-        {popupOpen && (
-          <>
-            <motion.div
-              key="backdrop"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm"
-              onClick={() => setPopupOpen(false)}
-              aria-hidden
-            />
-            <div
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
-              aria-hidden
-            >
-              <motion.div
-                key="dialog"
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby="popup-title"
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.25 }}
-                className="relative w-full max-w-4xl max-h-[90vh] rounded-2xl border border-slate-700 bg-slate-800 shadow-xl flex flex-col md:flex-row overflow-hidden pointer-events-auto"
-                onClick={(e) => e.stopPropagation()}
-                onKeyDown={(e) => e.key === 'Escape' && setPopupOpen(false)}
+      {/* Content Section */}
+      <div className="w-full lg:w-1/2 flex flex-col justify-center">
+        <motion.div
+          initial={{ opacity: 0, x: isEven ? 20 : -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <p className={`text-xs font-bold uppercase tracking-widest mb-3 ${
+            type.includes('CODRATEC') 
+              ? 'bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] bg-clip-text text-transparent drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]' 
+              : 'text-primary'
+          }`}>
+            {type}
+          </p>
+          <h3 className="text-2xl md:text-3xl font-display font-bold text-slate-100 mb-4 leading-tight">
+            {name}
+          </h3>
+          <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-6">
+            {description}
+          </p>
+          
+          <div>
+            {hasLink ? (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-sm bg-primary/10 text-primary hover:bg-primary hover:text-slate-900 font-semibold transition-all duration-300 group"
               >
-                <button
-                  type="button"
-                  onClick={() => setPopupOpen(false)}
-                  className="absolute top-3 right-3 z-10 rounded-lg p-2 text-gray-400 hover:text-slate-900 hover:bg-white/10 transition-colors shrink-0"
-                  aria-label="Fechar"
-                >
-                  <X className="w-6 h-6" />
-                </button>
-
-                {/* Coluna esquerda: imagem */}
-                <div className="relative w-full md:w-[45%] md:min-w-0 flex-shrink-0 bg-slate-900">
-                  {images.length > 0 ? (
-                    <div className="relative w-full aspect-video md:aspect-auto md:h-full min-h-[220px]">
-                      <AnimatePresence mode="wait">
-                        <motion.img
-                          key={currentImageIndex}
-                          src={encodeURI(images[currentImageIndex])}
-                          alt={name}
-                          className="w-full h-full object-contain"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                        />
-                      </AnimatePresence>
-                      {hasMultipleImages && (
-                        <>
-                          <button
-                            type="button"
-                            onClick={goPrev}
-                            className="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center text-white transition-colors"
-                            aria-label="Foto anterior"
-                          >
-                            <ChevronLeft className="w-5 h-5" />
-                          </button>
-                          <button
-                            type="button"
-                            onClick={goNext}
-                            className="absolute right-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center text-white transition-colors"
-                            aria-label="Próxima foto"
-                          >
-                            <ChevronRight className="w-5 h-5" />
-                          </button>
-                          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
-                            {images.map((_, i) => (
-                              <button
-                                key={i}
-                                type="button"
-                                onClick={() => setCurrentImageIndex(i)}
-                                className={`h-1.5 rounded-full transition-all ${i === currentImageIndex ? 'bg-secondary w-5' : 'bg-white/50 w-1.5 hover:bg-white/70'}`}
-                                aria-label={`Ver imagem ${i + 1}`}
-                              />
-                            ))}
-                          </div>
-                        </>
-                      )}
-                    </div>
-                  ) : (
-                    <div className="w-full aspect-video md:h-full min-h-[220px] flex items-center justify-center text-gray-500">
-                      <ImageIcon className="w-14 h-14" />
-                    </div>
-                  )}
-                </div>
-
-                {/* Coluna direita: texto */}
-                <div className="flex-1 min-w-0 overflow-y-auto flex flex-col justify-center p-5 sm:p-6 md:p-8">
-                  <p className="text-xs font-medium uppercase tracking-wider text-slate-400 mb-1">{type}</p>
-                  <h3 id="popup-title" className="text-xl font-semibold text-slate-900 mb-4">
-                    <span className="text-secondary">{name}</span>
-                  </h3>
-                  <p className="text-slate-300 text-base leading-relaxed">{description}</p>
-                  <div className="mt-6 pt-4 border-t border-slate-700">
-                    {hasLink ? (
-                      <a
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-secondary hover:text-accent font-medium transition-colors"
-                      >
-                        {cta}
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    ) : (
-                      <a
-                        href="#contact"
-                        className="inline-flex items-center gap-2 text-secondary hover:text-accent font-medium transition-colors"
-                        onClick={() => setPopupOpen(false)}
-                      >
-                        {cta}
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </>
-        )}
-      </AnimatePresence>
+                {cta}
+                <ExternalLink className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              </a>
+            ) : (
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-sm bg-slate-800 text-slate-200 border border-slate-700 hover:bg-secondary hover:text-slate-900 hover:border-secondary font-semibold transition-all duration-300 group"
+              >
+                {cta}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            )}
+          </div>
+        </motion.div>
+      </div>
     </motion.article>
   );
 }
 
 export function Portfolio() {
   const { t, get } = useLocale();
-  const [imagesByFolder, setImagesByFolder] = useState<Record<string, string[]>>(
-    portfolioImagesFallback as Record<string, string[]>
-  );
+  const [projectImages, setProjectImages] = useState<Record<string, string[]>>({});
 
   useEffect(() => {
-    fetch('/api/portfolio-images')
-      .then((res) => res.ok ? res.json() : null)
-      .then((data) => {
-        if (data && typeof data === 'object') setImagesByFolder(data);
-      })
-      .catch(() => {});
+    async function fetchImages() {
+      try {
+        const response = await fetch('/api/portfolio-images');
+        if (response.ok) {
+          const data = await response.json();
+          setProjectImages(data);
+        } else {
+          setProjectImages(portfolioImagesFallback);
+        }
+      } catch (error) {
+        console.error('Failed to fetch portfolio images:', error);
+        setProjectImages(portfolioImagesFallback);
+      }
+    }
+    fetchImages();
   }, []);
 
   return (
-    <section id="projects" className="py-14 bg-darker">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-16 bg-slate-900 relative overflow-hidden">
+      {/* Background gradients */}
+      <div className="absolute top-40 left-0 w-1/3 h-1/3 bg-primary/5 blur-[120px] rounded-full -translate-x-1/2" />
+      <div className="absolute bottom-40 right-0 w-1/4 h-1/4 bg-secondary/5 blur-[100px] rounded-full translate-x-1/2" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-slate-900">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-slate-100">
             {t('projects.title')}
           </h2>
-          <p className="mt-2 text-gray-400 text-sm md:text-base">{t('projects.subtitle')}</p>
+          <p className="text-slate-300 text-lg max-w-2xl mx-auto">
+            {t('projects.subtitle')}
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="space-y-16 md:space-y-20">
           {PROJECT_KEYS.map((key, index) => {
-            const item = get(`projects.${key}`) as ProjectItem | null;
-            if (!item || typeof item !== 'object') return null;
-            const { type, name, description, cta, url = '', image = '', images: imagesArray } = item;
-            const folderImages = imagesByFolder[FOLDER_BY_KEY[key]] || [];
-            const images = folderImages.length > 0
-              ? folderImages
-              : (Array.isArray(imagesArray) && imagesArray.length > 0 ? imagesArray : image ? [image] : []);
+            const projectData = get(`projects.${key}`) as ProjectItem | undefined;
+            if (!projectData) return null;
+
+            const { type, name, description, cta, url, images: jsonImages } = projectData;
+            const folderName = FOLDER_BY_KEY[key];
+            const fetchedImages = projectImages[folderName] || [];
+            
+            const images = fetchedImages.length > 0 
+              ? fetchedImages 
+              : (jsonImages || []);
+
             const hasLink = Boolean(url && String(url).trim() !== '');
 
             return (
-              <ProjectCard
+              <ProjectShowcase
                 key={key}
                 index={index}
                 type={type}
                 name={name}
                 description={description}
                 cta={cta}
-                url={url}
+                url={url || ''}
                 hasLink={hasLink}
                 images={images}
               />

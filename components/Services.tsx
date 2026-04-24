@@ -1,65 +1,57 @@
 'use client';
 
-import { Code, Network, Database, Cloud } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLocale } from '@/contexts/LocaleContext';
 
 const SERVICE_KEYS = ['websystems', 'automation', 'integrations', 'data', 'bots', 'business', 'consulting'] as const;
-const ICONS = [Code, Cloud, Network, Database, Cloud, Code, Network];
 
 export function Services() {
-  const { t, get } = useLocale();
+  const { t } = useLocale();
 
   return (
-    <section id="services" className="py-14 bg-darker">
+    <section id="services" className="py-24 bg-darker">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-slate-900">
+        
+        {/* Header */}
+        <div className="mb-16 text-center">
+          <h2 className="text-sm font-bold text-primary uppercase tracking-widest mb-4">
             {t('services.title')}
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">{t('services.subtitle')}</p>
-        </motion.div>
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-slate-100 leading-tight max-w-3xl mx-auto">
+            {t('services.subtitle')}
+          </h3>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
+        {/* Small Cards Grid Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {SERVICE_KEYS.map((key, index) => {
-            const Icon = ICONS[index];
             const title = t(`services.${key}.title`);
             const description = t(`services.${key}.description`);
-            const tags = (get(`services.${key}.tags`) as string[]) || [];
+            
             return (
               <motion.div
                 key={key}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-6 sm:p-8 rounded-2xl border border-slate-700 bg-slate-800 hover:bg-slate-700 hover:border-slate-600 shadow-sm transition-all duration-300"
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="group p-6 md:p-8 flex flex-col h-full bg-slate-900 border border-slate-700/60 rounded-sm hover:border-slate-500 hover:bg-slate-800 transition-colors duration-300"
               >
-                <div className="mb-4 p-3 rounded-lg bg-primary/20 w-fit">
-                  <Icon className="w-8 h-8 text-secondary" />
+                <div className="text-slate-600 font-mono text-xs font-bold mb-5 flex justify-between items-center">
+                  <span>0{index + 1}</span>
+                  <div className="w-4 h-[1px] bg-slate-700 group-hover:bg-primary transition-colors" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-slate-100">{title}</h3>
-                <p className="text-slate-300 text-sm mb-4">{description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 rounded-full text-sm text-slate-200 border border-slate-600 bg-slate-700"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <h4 className="text-xl font-bold text-slate-100 mb-3 group-hover:text-white">
+                  {title}
+                </h4>
+                <p className="text-slate-400 text-sm leading-relaxed flex-1">
+                  {description}
+                </p>
               </motion.div>
             );
           })}
         </div>
+
       </div>
     </section>
   );

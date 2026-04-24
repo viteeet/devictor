@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
-const FOLDERS = ['projeto 1', 'projeto 2', 'projeto 3'];
 const IMG_EXT = new Set(['.png', '.jpg', '.jpeg', '.webp', '.gif', '.avif', '.svg']);
 
 function listImagesInFolder(portfolioDir: string, folderName: string): string[] {
@@ -22,8 +21,20 @@ function listImagesInFolder(portfolioDir: string, folderName: string): string[] 
 export async function GET() {
   const portfolioDir = path.join(process.cwd(), 'public', 'portfolio');
   const result: Record<string, string[]> = {};
-  for (const folder of FOLDERS) {
-    result[folder] = listImagesInFolder(portfolioDir, folder);
+  
+  try {
+    if (fs.existsSync(portfolioDir) && fs.statSync(portfolioDir).isDirectory()) {
+      const folders = fs.readdirSync(portfolioDir).filter(f => 
+        fs.statSync(path.join(portfolioDir, f)).isDirectory()
+      );
+      
+      for (const folder of folders) {
+        result[folder] = listImagesInFolder(portfolioDir, folder);
+      }
+    }
+  } catch (error) {
+    console.error('Error reading portfolio directory:', error);
   }
+  
   return NextResponse.json(result);
 }

@@ -1,116 +1,53 @@
 'use client';
 
-import React, { useState } from 'react';
-import { MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { ParticlesBackground } from './ParticlesBackground';
 import { useLocale } from '@/contexts/LocaleContext';
 
 const WHATSAPP_URL = 'https://wa.me/393313888587';
 
-function ShuffleText({ text }: { text: string }) {
-  const letters = text.split('');
-  return (
-    <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="inline-block">
-      {letters.map((letter, index) => (
-        <motion.span
-          key={`${letter}-${index}`}
-          initial={{ opacity: 0, filter: 'blur(10px)' }}
-          animate={{ opacity: 1, filter: 'blur(0px)' }}
-          transition={{ duration: 0.3, delay: index * 0.05, ease: 'easeOut' }}
-          className="inline-block"
-        >
-          {letter === ' ' ? '\u00A0' : letter}
-        </motion.span>
-      ))}
-    </motion.span>
-  );
-}
+const HERO_VALUES = [
+  'Sistemas em operação contínua',
+  'Automações em rotinas críticas',
+  'Sistemas financeiros e operacionais',
+  'Do zero à produção'
+];
 
 export function Hero() {
-  const [isGlitching, setIsGlitching] = useState(false);
   const { t } = useLocale();
 
-  const handleWhatsAppHover = () => {
-    setIsGlitching(true);
-    setTimeout(() => setIsGlitching(false), 300);
-  };
-
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      <div className="absolute inset-0 z-0">
-        <ParticlesBackground />
-      </div>
+    <section id="home" className="relative min-h-screen flex items-center bg-slate-900 pt-20 overflow-hidden">
+      {/* Subtle grid background instead of particles/glows for a technical feel */}
       <div
-        className="absolute inset-0"
-        style={{
-          background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)',
-          backgroundSize: '200% 200%',
-          animation: 'gradient 15s ease infinite',
-        }}
-      />
-      <div
-        className="absolute inset-0 opacity-10 z-[1]"
+        className="absolute inset-0 opacity-[0.03] z-[1]"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px)
+            linear-gradient(to right, #ffffff 1px, transparent 1px),
+            linear-gradient(to bottom, #ffffff 1px, transparent 1px)
           `,
-          backgroundSize: '50px 50px',
+          backgroundSize: '4rem 4rem',
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div className="text-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+        <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
             className="mb-8"
           >
-            <motion.h1
-              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight px-4"
-              animate={{
-                textShadow: [
-                  '0 0 0 rgba(59, 130, 246, 0), 5px 0 0 rgba(56, 189, 248, 0), -5px 0 0 rgba(99, 102, 241, 0)',
-                  '0 0 0 rgba(59, 130, 246, 1), 5px 0 0 rgba(56, 189, 248, 1), -5px 0 0 rgba(99, 102, 241, 1), 3px 0 0 rgba(236, 72, 153, 0.8), -3px 0 0 rgba(14, 165, 233, 0.8)',
-                  '0 0 0 rgba(59, 130, 246, 0), 5px 0 0 rgba(56, 189, 248, 0), -5px 0 0 rgba(99, 102, 241, 0)',
-                ],
-                x: [0, 3, -3, 2, -2, 0],
-                y: [0, 1, -1, 0],
-              }}
-              transition={{ duration: 0.15, repeat: Infinity, repeatDelay: 1.5, ease: 'easeInOut' }}
-            >
-              <span className="text-white">
-                <ShuffleText text={t('hero.title')} />
-              </span>
-            </motion.h1>
-            <motion.div
-              className="relative inline-block mt-2"
-              animate={{
-                textShadow: [
-                  '0 0 0 rgba(59, 130, 246, 0), 4px 0 0 rgba(56, 189, 248, 0), -4px 0 0 rgba(99, 102, 241, 0)',
-                  '0 0 0 rgba(59, 130, 246, 1), 4px 0 0 rgba(56, 189, 248, 1), -4px 0 0 rgba(99, 102, 241, 1), 2px 0 0 rgba(236, 72, 153, 0.9), -2px 0 0 rgba(14, 165, 233, 0.9)',
-                  '0 0 0 rgba(59, 130, 246, 0), 4px 0 0 rgba(56, 189, 248, 0), -4px 0 0 rgba(99, 102, 241, 0)',
-                ],
-                x: [0, 2, -2, 1, -1, 0],
-                y: [0, 1, -1, 0],
-              }}
-              transition={{ duration: 0.12, repeat: Infinity, repeatDelay: 2.5, ease: 'easeInOut' }}
-            >
-              <p className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold px-4">
-                <span className="bg-gradient-to-r from-secondary via-accent to-secondary bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-text text-shimmer">
-                  {t('hero.subtitle')}
-                </span>
-              </p>
-            </motion.div>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-display font-bold leading-[1.1] tracking-tight text-slate-100 mb-6">
+              {t('hero.title')}. <br className="hidden md:block" />
+              <span className="text-2xl sm:text-3xl md:text-4xl text-primary font-medium tracking-normal block mt-2">{t('hero.subtitle')}</span>
+            </h1>
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto px-4"
+            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+            className="text-lg sm:text-xl md:text-2xl text-slate-400 mb-10 max-w-2xl leading-relaxed"
           >
             {t('hero.tagline')}
           </motion.p>
@@ -118,42 +55,48 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+            className="flex flex-col sm:flex-row gap-4 items-start mb-20"
           >
-            <motion.a
+            <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-2 px-8 py-4 bg-primary hover:bg-secondary rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/50 cursor-pointer"
-              onMouseEnter={handleWhatsAppHover}
-              animate={
-                isGlitching
-                  ? {
-                      x: [0, 3, -3, 4, -4, 2, -2, 0],
-                      y: [0, 3, -3, 4, -4, 2, -2, 0],
-                      rotate: [0, 8, -8, 5, -5, 0],
-                    }
-                  : {}
-              }
-              transition={{ duration: 0.15, times: [0, 0.14, 0.28, 0.42, 0.56, 0.7, 0.84, 1] }}
+              className="inline-flex items-center justify-center px-8 py-4 bg-primary text-slate-900 font-bold text-lg hover:bg-white transition-colors duration-200 w-full sm:w-auto"
             >
-              <MessageCircle className="w-5 h-5" />
-              <span>{t('hero.cta')}</span>
-            </motion.a>
+              {t('hero.cta')}
+            </a>
+            <a
+              href="#services"
+              className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-slate-700 text-slate-300 font-bold text-lg hover:border-slate-500 hover:text-slate-100 transition-colors duration-200 w-full sm:w-auto"
+            >
+              {t('nav.services')}
+            </a>
           </motion.div>
-        </div>
+          
+          {/* Animated Ticker / Value Props */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="relative flex overflow-hidden border-t border-slate-800 pt-8"
+          >
+            <motion.div
+              animate={{ x: [0, -1000] }}
+              transition={{ repeat: Infinity, duration: 25, ease: 'linear' }}
+              className="flex whitespace-nowrap items-center gap-12 text-xs uppercase tracking-widest text-slate-500 font-semibold"
+            >
+              {/* Render the list multiple times to create a seamless loop */}
+              {[...HERO_VALUES, ...HERO_VALUES, ...HERO_VALUES].map((value, i) => (
+                <div key={i} className="flex items-center gap-12">
+                  <span>{value}</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-slate-700" />
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
 
-        <motion.div
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-20 right-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{ y: [0, 20, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute bottom-20 left-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl"
-        />
+        </div>
       </div>
     </section>
   );

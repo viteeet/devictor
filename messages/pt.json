@@ -1,104 +1,127 @@
 {
   "nav": {
-    "services": "O que faço",
+    "services": "Serviços",
     "projects": "Projetos",
-    "about": "Sobre mim",
+    "about": "Sobre nós",
     "contact": "Contato"
   },
   "hero": {
-    "title": "Victor Hugo",
-    "subtitle": "Desenvolvedor Full Stack",
-    "tagline": "Sistemas escaláveis. Arquitetura de dados. Produtos digitais.",
-    "cta": "Falar no WhatsApp"
+    "title": "CODRATEC",
+    "subtitle": "Software House",
+    "tagline": "Sistemas e automações que reduzem trabalho manual e aumentam escala.",
+    "cta": "Solicitar diagnóstico gratuito"
   },
   "services": {
-    "title": "O que eu faço?",
-    "subtitle": "Principais frentes de atuação agrupadas em categorias estratégicas",
+    "title": "O que fazemos",
+    "subtitle": "Soluções estratégicas para reduzir custos e acelerar o crescimento",
     "websystems": {
-      "title": "Sistemas Web",
-      "description": "Desenvolvimento de sistemas e plataformas sob medida para operação e crescimento.",
-      "tags": ["CRMs", "ERPs", "SaaS", "Portais"]
+      "title": "Sistemas Web Sob Medida",
+      "description": "Plataformas personalizadas para operar e escalar processos do negócio."
     },
     "automation": {
       "title": "Automação de Processos",
-      "description": "Automação de rotinas empresariais com foco em produtividade, redução de erros e escala.",
-      "tags": ["RPA", "Fluxos", "Relatórios", "Mensageria"]
+      "description": "Eliminação de tarefas manuais com automações integradas ao fluxo da empresa."
     },
     "integrations": {
       "title": "Integrações e APIs",
-      "description": "Conexão entre sistemas internos e serviços externos para operações unificadas.",
-      "tags": ["Pagamentos", "Bancos", "CRMs", "SaaS"]
+      "description": "Conexão entre sistemas, ERPs e serviços externos para centralizar operações."
     },
     "data": {
-      "title": "Dashboards e Dados",
-      "description": "Estruturação de dados e painéis gerenciais para decisões rápidas e confiáveis.",
-      "tags": ["Dashboards", "ETL", "Pipelines", "Analytics"]
+      "title": "Dados e Dashboards",
+      "description": "Painéis com dados em tempo real para controle e tomada de decisão."
     },
     "bots": {
-      "title": "Bots e Inteligência",
-      "description": "Bots para atendimento, monitoramento e processamento automatizado de informações.",
-      "tags": ["WhatsApp", "Telegram", "Discord", "Scraping"]
+      "title": "Bots e Automação Inteligente",
+      "description": "Bots para atendimento, cobrança e execução automática de tarefas."
     },
     "business": {
-      "title": "Sistemas Empresariais",
-      "description": "Sistemas internos para gestão de estoque, finanças, vendas e controle operacional.",
-      "tags": ["Estoque", "Financeiro", "Vendas", "Operação"]
+      "title": "Sistemas de Gestão Interna",
+      "description": "Controle de estoque, financeiro, vendas e operação em um único sistema."
     },
     "consulting": {
       "title": "Consultoria Técnica",
-      "description": "Apoio estratégico para arquitetura, evolução de produto e decisões técnicas.",
-      "tags": ["Arquitetura", "MVPs", "Produto", "Escalabilidade"]
+      "description": "Definição de arquitetura e evolução de sistemas existentes."
     }
   },
   "projects": {
     "title": "Projetos",
-    "subtitle": "Projetos selecionados",
+    "subtitle": "Soluções entregues com foco em eficiência e escala",
     "item1": {
       "num": "01",
       "type": "MOBI FIDC",
       "name": "SGM — Sistema Geral Modulado",
-      "description": "Sistema Geral Modulado desenvolvido para a MOBI FIDC. Similar a um CRM, utilizado para realizar operações e automatizar todas as rotinas de um fundo de investimento — gestão de cotistas, conciliação, compliance e fluxos operacionais integrados em uma única plataforma. Consome diversas APIs para elaboração de relatórios automáticos.",
-      "cta": "Falar sobre o projeto",
+      "description": "Sistema interno para gestão operacional de FIDC. Automatização de rotinas financeiras e controle de carteira, resultando na redução drástica de tarefas manuais e centralização de toda a operação em um único fluxo.",
+      "cta": "Informações do projeto",
       "url": "",
-      "image": "",
-      "images": ["/portfolio/projeto 1/proj1.png"]
+      "images": ["/portfolio/projeto 1/FOTO 1.png", "/portfolio/projeto 1/FOTO 2.png"]
     },
     "item2": {
       "num": "02",
       "type": "Reversa Capital",
       "name": "Reversa CRM",
-      "description": "CRM sob medida para a Reversa Capital. Gestão do relacionamento com clientes, acompanhamento de cobranças, automação de processos de recuperação e relatórios integrados em interface moderna e responsiva.",
-      "cta": "Ver projeto",
-      "url": "https://reversa.vercel.app/",
-      "image": "",
-      "images": ["/portfolio/projeto 2/proj2.png"]
+      "description": "CRM personalizado para gestão de cobrança e relacionamento. Automatiza processos de recuperação de crédito e centraliza o acompanhamento de clientes, eliminando planilhas e aumentando a produtividade da equipe.",
+      "cta": "Informações do projeto",
+      "url": "",
+      "images": ["/portfolio/projeto 2/FOTO 1.png", "/portfolio/projeto 2/FOTO 2.png"]
     },
     "item3": {
       "num": "03",
       "type": "MOBI FIDC",
-      "name": "Relatórios gerenciais externos",
-      "description": "Plataforma de relatórios gerenciais com dados armazenados de forma segura. Acesso controlado, visualizações e exportações para apoio à tomada de decisão, com foco em confidencialidade e performance. Atualização automática via robôs em Python.",
+      "name": "Relatórios Gerenciais Automáticos",
+      "description": "Plataforma de inteligência de dados com atualização automática via Python. Substitui a geração manual de relatórios complexos por painéis em tempo real com acesso controlado e seguro.",
+      "cta": "Informações do projeto",
+      "url": "",
+      "images": ["/portfolio/projeto 3/FOTO 1.png"]
+    },
+    "item4": {
+      "num": "04",
+      "type": "Produto CODRATEC",
+      "name": "Chatbot & API WhatsApp",
+      "description": "Solução própria para automação no WhatsApp sem necessidade de API oficial. Permite envio de mensagens em escala, criação de fluxos automatizados e integração com sistemas internos para atendimento, cobrança e notificações.",
+      "cta": "Informações do projeto",
+      "url": "",
+      "images": ["/portfolio/projeto 4/FOTO 1.png"]
+    },
+    "item5": {
+      "num": "05",
+      "type": "Produto CODRATEC",
+      "name": "Nahora — Agendamento Online",
+      "description": "Sistema de agendamento online com gestão de horários, serviços e clientes. Inclui confirmações automáticas e lembretes, além de um painel administrativo para controle completo da operação. Reduz faltas e organiza o fluxo de atendimento.",
       "cta": "Ver projeto",
-      "url": "https://mobi-comercial.vercel.app/login",
-      "image": "",
-      "images": ["/portfolio/projeto 3/proj3.png"]
+      "url": "https://nahora-app.vercel.app/",
+      "images": ["/portfolio/projeto 5/FOTO 1.png"]
+    },
+    "item6": {
+      "num": "06",
+      "type": "Produto CODRATEC",
+      "name": "Zapt — Gestão de Distribuição",
+      "description": "Sistema interno para distribuidoras controlarem pedidos, estoque e entregas de mercadorias. Centraliza a operação, organiza processos e reduz erros no fluxo operacional.",
+      "cta": "Ver projeto",
+      "url": "https://zaptentregas.vercel.app/",
+      "images": ["/portfolio/projeto 6/FOTO 1.png"]
     }
   },
   "about": {
-    "title": "Sobre mim",
-    "role": "Victor Hugo — Desenvolvedor",
-    "bio": "Sou Victor Hugo, desenvolvedor do VCTR, graduado em Análise e Desenvolvimento de Sistemas. Trabalho com sistemas que escalam — de produto a dados e automação. Frontend, backend, arquitetura de dados e automação de processos, com foco em clareza, performance e impacto real no negócio.",
+    "title": "Sobre nós",
+    "victor": {
+      "role": "Fundador & Desenvolvedor Full Stack",
+      "bio": "Especialista em automação, dados e sistemas escaláveis. Atua na criação de soluções que reduzem a operação manual e aumentam a eficiência do negócio através da tecnologia."
+    },
+    "beatriz": {
+      "role": "Co-fundadora & Desenvolvedora Frontend",
+      "bio": "Especialista em interfaces e experiência do usuário, responsável por transformar sistemas complexos em aplicações simples, intuitivas e focadas na conversão."
+    },
     "stats": {
-      "years": "Anos de experiência",
-      "clients": "Clientes satisfeitos",
-      "projects": "Projetos realizados",
-      "companies": "Empresas / produtos"
+      "operation": "Sistemas em operação contínua",
+      "automation": "Automações em rotinas críticas",
+      "experience": "Sistemas financeiros e operacionais",
+      "production": "Do zero à produção"
     },
     "linkedin": "Ver perfil no LinkedIn"
   },
   "testimonials": {
     "title": "Depoimentos",
-    "subtitle": "O que os clientes dizem sobre o meu trabalho",
+    "subtitle": "Resultados reais entregues para nossos parceiros",
     "viewOnLinkedIn": "Veja todas as recomendações no LinkedIn",
     "items": [
       {
@@ -108,28 +131,28 @@
         "image": ""
       },
       {
-        "name": "pessoa 2",
-        "company": "yyyyy",
-        "text": "Contratamos o Victor para desenvolver automações em Python que reduziram significativamente o tempo de operação. Profissional excepcional com excelente comunicação.",
+        "name": "MOBI FIDC",
+        "company": "Fundo de Investimento",
+        "text": "As automações desenvolvidas pela CODRATEC reduziram significativamente nosso tempo de operação manual. Equipe excepcional com excelente comunicação e foco em eficiência.",
         "image": ""
       },
       {
-        "name": "pessoa 3",
-        "company": "zzzzz",
-        "text": "Victor criou dashboards e sistemas de gestão que transformaram nossa análise de dados. Metodologia clara e suporte contínuo. Profissional de confiança.",
+        "name": "Reversa Capital",
+        "company": "Recuperação de Crédito",
+        "text": "O CRM sob medida transformou nossa análise de dados e gestão de cobrança. Metodologia clara e suporte contínuo. Parceiros de confiança.",
         "image": ""
       }
     ]
   },
   "contact": {
-    "title": "Vamos conversar?",
-    "subtitle": "Conte sua ideia ou solicite uma proposta. Resposta por WhatsApp ou e-mail.",
-    "cta": "Falar no WhatsApp",
+    "title": "Vamos otimizar seu negócio?",
+    "subtitle": "Descreva seu processo atual e identifique onde você está perdendo tempo e dinheiro.",
+    "cta": "Receber análise",
     "orCall": "Ou ligue",
     "orEmail": "Ou envie um e-mail"
   },
   "footer": {
-    "rights": "2026 VCTR Studio. Estúdio independente de desenvolvimento de software desenvolvido por Victor.",
+    "rights": "2026 CODRATEC. Software house focada em eficiência operacional e escala.",
     "privacy": "Privacidade"
   },
   "common": {

@@ -1,7 +1,7 @@
 {
-  "name": "DEVICTOR - Victor Hugo",
-  "short_name": "DEVICTOR",
-  "description": "Desenvolvedor Full Stack | Programação inteligente, automação e desenvolvimento sob medida",
+  "name": "CODRATEC",
+  "short_name": "CODRATEC",
+  "description": "Software House | Sistemas escaláveis, automação e desenvolvimento sob medida",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f172a",
@@ -14,4 +14,3 @@
     }
   ]
 }
-
