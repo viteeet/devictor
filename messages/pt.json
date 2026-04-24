@@ -12,7 +12,7 @@
     "cta": "Solicitar diagnóstico gratuito"
   },
   "services": {
-    "title": "O que fazemos",
+    "title": "Em que ferramentas e recursos você está interessado?",
     "subtitle": "Soluções estratégicas para reduzir custos e acelerar o crescimento",
     "websystems": {
       "title": "Sistemas Web Sob Medida",
@@ -37,6 +37,10 @@
     "business": {
       "title": "Sistemas de Gestão Interna",
       "description": "Controle de estoque, financeiro, vendas e operação em um único sistema."
+    },
+    "crm": {
+      "title": "CRM Personalizado",
+      "description": "Gestão de pipelines, funis de vendas e automação de leads para escalar sua operação comercial."
     },
     "consulting": {
       "title": "Consultoria Técnica",

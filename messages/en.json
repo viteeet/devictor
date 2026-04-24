@@ -12,7 +12,7 @@
     "cta": "Request free diagnosis"
   },
   "services": {
-    "title": "What we do",
+    "title": "Which tools and resources are you interested in?",
     "subtitle": "Strategic solutions to reduce costs and accelerate growth",
     "websystems": {
       "title": "Custom Web Systems",
@@ -37,6 +37,10 @@
     "business": {
       "title": "Internal Management Systems",
       "description": "Inventory, financial, sales, and operations control in a single system."
+    },
+    "crm": {
+      "title": "Custom CRM",
+      "description": "Pipeline management, sales funnels, and lead automation to scale your business operations."
     },
     "consulting": {
       "title": "Technical Consulting",

@@ -2,49 +2,75 @@
 
 import { motion } from 'framer-motion';
 import { useLocale } from '@/contexts/LocaleContext';
+import { 
+  Monitor, 
+  Cpu, 
+  Unplug, 
+  Database, 
+  MessageSquare, 
+  Briefcase, 
+  Users,
+  Columns,
+  Kanban
+} from 'lucide-react';
 
-const SERVICE_KEYS = ['websystems', 'automation', 'integrations', 'data', 'bots', 'business', 'consulting'] as const;
+const SERVICE_KEYS = ['websystems', 'automation', 'integrations', 'data', 'bots', 'business', 'crm', 'consulting'] as const;
+
+const SERVICE_UI: Record<string, { icon: any, color: string }> = {
+  websystems: { icon: Monitor, color: 'text-pink-500' },
+  automation: { icon: Cpu, color: 'text-amber-500' },
+  integrations: { icon: Unplug, color: 'text-indigo-500' },
+  data: { icon: Database, color: 'text-blue-500' },
+  bots: { icon: MessageSquare, color: 'text-cyan-500' },
+  business: { icon: Briefcase, color: 'text-emerald-500' },
+  crm: { icon: Kanban, color: 'text-sky-400' },
+  consulting: { icon: Users, color: 'text-orange-500' },
+};
+
 
 export function Services() {
   const { t } = useLocale();
 
   return (
-    <section id="services" className="py-24 bg-darker">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-24 bg-darker relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-primary/5 blur-[120px] rounded-full -translate-y-1/2 -translate-x-1/2" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="mb-16 text-center">
-          <h2 className="text-sm font-bold text-primary uppercase tracking-widest mb-4">
+        <div className="mb-16 text-center md:text-left">
+          <h2 className="text-2xl md:text-4xl font-display font-bold text-slate-100 tracking-tight">
             {t('services.title')}
           </h2>
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-slate-100 leading-tight max-w-3xl mx-auto">
-            {t('services.subtitle')}
-          </h3>
         </div>
 
-        {/* Small Cards Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICE_KEYS.map((key, index) => {
             const title = t(`services.${key}.title`);
             const description = t(`services.${key}.description`);
+            const { icon: Icon, color } = SERVICE_UI[key] || { icon: Monitor, color: 'text-primary' };
             
             return (
               <motion.div
                 key={key}
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="group p-6 md:p-8 flex flex-col h-full bg-slate-900 border border-slate-700/60 rounded-sm hover:border-slate-500 hover:bg-slate-800 transition-colors duration-300"
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative p-8 bg-slate-900/50 border border-slate-800 rounded-[24px] shadow-xl hover:bg-slate-900 hover:border-slate-700 transition-all duration-300 group cursor-default backdrop-blur-sm"
               >
-                <div className="text-slate-600 font-mono text-xs font-bold mb-5 flex justify-between items-center">
-                  <span>0{index + 1}</span>
-                  <div className="w-4 h-[1px] bg-slate-700 group-hover:bg-primary transition-colors" />
+                {/* Icon */}
+                <div className={`mb-6 ${color} opacity-90 group-hover:opacity-100 transition-opacity`}>
+                  <Icon size={32} strokeWidth={1.5} />
                 </div>
-                <h4 className="text-xl font-bold text-slate-100 mb-3 group-hover:text-white">
+
+                {/* Content */}
+                <h4 className="text-xl font-bold text-slate-100 mb-3 group-hover:text-white transition-colors">
                   {title}
                 </h4>
-                <p className="text-slate-400 text-sm leading-relaxed flex-1">
+                <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors">
                   {description}
                 </p>
               </motion.div>
@@ -56,3 +82,5 @@ export function Services() {
     </section>
   );
 }
+
+
